@@ -1,4 +1,6 @@
 <script>
+  import Time from '$lib/components/Time.svelte';
+
   export let data;
   const { title, date, content: Content } = data;
 </script>
@@ -6,7 +8,7 @@
 <article>
   <header>
     <h1>{title}</h1>
-    <time datetime="{date}">{date}</time>
+    <Time {date} />
   </header>
 
   <svelte:component this={Content} />

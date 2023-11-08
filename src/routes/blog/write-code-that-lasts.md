@@ -1,10 +1,8 @@
 ---
-title: Writing Code That Lasts
-slug: writing-code-that-lasts
+title: Write Code That Lasts
 date: 2023-11-06
 description: As developers, often the approach to tackling a problem is to rip out the old thing and replace it with a shiny new one. How do we break this pattern?
-tags:
-  - Development
+published: true
 ---
 
 As developers, often the approach to tackling a problem is to rip out the old thing and replace it with a shiny new one. One of the leading causes of this is that the cognitive load to understand the old code and how it works is more difficult than implementing something new. New code is free of dependencies and past mistakes... plus it often comes with better documentation from whatever the latest hotness is. If you implement this latest trend maybe the issue won't come up again in the future?

@@ -4,10 +4,8 @@
 </script>
 
 <div class="home">
-
   <main class="container-sm">
     <slot />
-
     <Footer>
       <p><strong>You can also reach me via email or social media</strong></p>
     </Footer>
@@ -16,6 +14,7 @@
 
 <style>
   .home {
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;

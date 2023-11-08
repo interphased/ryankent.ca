@@ -1,8 +1,10 @@
 <script lang="ts">
   let success = false;
   let error = false;
+  let email = '';
+  let message = '';
 
-  const handleSubmit = (e: SubmitEvent) => {
+  function handleSubmit (e: SubmitEvent) {
     success = false;
     error = false;
 
@@ -14,8 +16,12 @@
       body: new URLSearchParams(formData as any).toString()
     })
       .then(() => success = true)
-      .catch(() => error = true);
-  };
+      .catch(() => error = true)
+      .finally(() => {
+        email = '';
+        message = '';
+      });
+  }
 </script>
 
 <form
@@ -24,8 +30,8 @@
   method="POST"
   data-netlify="true"
   id="contact">
-  <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required />
-  <textarea name="message" aria-label="Message" rows="4" required placeholder="Hi! I'm contacting you because..."></textarea>
+  <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required bind:value={email} />
+  <textarea name="message" aria-label="Message" rows="4" required placeholder="Hi! I'm contacting you because..." bind:value={message}></textarea>
   {#if success}
     <span class="alert success">
       Thanks for submitting your message. I'll get back to you soon.
