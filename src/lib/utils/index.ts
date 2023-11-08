@@ -1,5 +1,17 @@
+type Post = {
+  metadata: {
+    content: string
+    title: string
+    date: string
+    description: string
+    published: boolean
+  }
+}
+
+type PostFiles = Record<string, () => Promise<Post>>
+
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
+  const allPostFiles = import.meta.glob('/src/routes/blog/*.md') as PostFiles;
   const iterablePostFiles = Object.entries(allPostFiles);
 
   const allPosts = await Promise.all(
