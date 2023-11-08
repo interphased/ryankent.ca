@@ -1,6 +1,11 @@
+<svelte:head>
+  <title>Ryan Kent - Web application developer from Toronto, Canada</title>
+</svelte:head>
+
 <script>
   import ContactForm from '$lib/components/ContactForm.svelte';
 </script>
+
 <header>
   <img src="/profile.webp" alt="profile" />
   <h1>Hi, my name is <span>Ryan Kent</span></h1>

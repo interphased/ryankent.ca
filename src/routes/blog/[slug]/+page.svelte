@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Ryan Kent - {title}</title>
+</svelte:head>
+
 <script>
   import Time from '$lib/components/Time.svelte';
 
