@@ -1,6 +1,12 @@
 <header class="container">
-  <img src="/profile.webp" alt="profile" />
-  <h1><span>Ryan Kent</span></h1>
+  <a href="/">
+    <img src="/profile.webp" alt="profile" />
+  </a>
+  <h1>
+    <span>
+      <a href="/blog">Ryan Kent</a>
+    </span>
+  </h1>
 </header>
 
 <style>
@@ -20,5 +26,10 @@
 
   h1 {
     margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--heading-color);
   }
 </style>

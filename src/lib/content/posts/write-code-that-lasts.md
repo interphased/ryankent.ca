@@ -2,6 +2,10 @@
 title: Write Code That Lasts
 date: 2023-11-06
 description: As developers, often the approach to tackling a problem is to rip out the old thing and replace it with a shiny new one. How do we break this pattern?
+keywords:
+  - Programming
+  - Code
+  - Web
 published: true
 ---
 

@@ -1,12 +1,16 @@
 <svelte:head>
   <title>Ryan Kent - {title}</title>
+  <meta name="description" content="{description}" />
+  <meta name="og:title" content="Ryan Kent - {title}"/>
+  <meta name="og:description" content="{description}" />
+  <meta name="keywords" content="{keywords.toString()}" />
 </svelte:head>
 
 <script>
   import Time from '$lib/components/Time.svelte';
 
   export let data;
-  const { title, date, content: Content } = data;
+  const { title, description, keywords, date, content: Content } = data;
 </script>
 
 <article>
@@ -17,10 +21,3 @@
 
   <svelte:component this={Content} />
 </article>
-
-<footer>
-  <nav>
-    <a href="/blog">Blog</a>
-    <a href="/">Home</a>
-  </nav>
-</footer>

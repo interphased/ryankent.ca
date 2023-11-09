@@ -1,5 +1,8 @@
 <svelte:head>
   <title>Ryan Kent - Web application developer from Toronto, Canada</title>
+  <meta name="description" content="Hi! I'm a web application developer from Toronto, Canada" />
+  <meta name="og:title" content="Ryan Kent"/>
+  <meta name="og:description" content="Hi! I'm a web application developer from Toronto, Canada" />
 </svelte:head>
 
 <script>
