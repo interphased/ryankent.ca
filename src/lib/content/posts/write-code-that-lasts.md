@@ -6,7 +6,7 @@ keywords:
   - Programming
   - Code
   - Web
-published: true
+published: false
 ---
 
 As developers, often the approach to tackling a problem is to rip out the old thing and replace it with a shiny new one. One of the leading causes of this is that the cognitive load to understand the old code and how it works is more difficult than implementing something new. New code is free of dependencies and past mistakes... plus it often comes with better documentation from whatever the latest hotness is. If you implement this latest trend maybe the issue won't come up again in the future?
@@ -17,13 +17,6 @@ It doesn't always have to be this way. There are some practices you could follow
 
 ## Don't reinvent the wheel
 Use native controls, elements, and behaviours before implementing something new. Extend them instead. They are battle-tested and supported across all devices and platforms.
-
-```html
-<details>
-  <summary>A summary of the content.</summary>
-  The content, tucked away until the user performs an action to display it.
-</details>
-```
 
 ## Be aware of your dependencies and their approximate lifetime
 - Don't add dependencies that solve simple problems. You can get locked into them where they or another dependency can no longer be updated.
