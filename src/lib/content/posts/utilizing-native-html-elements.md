@@ -28,13 +28,13 @@ published: true
 
 When developing for the web you should always look to implement existing, native, semantic elements and features before adding unnecessary third-party code or reinventing the wheel. It's the same reason we don't scroll-jack the window anymore: users want to consume the content in the most familiar and least obtrusive way possible. Since your users could be using any device from the last decade, with any screen size, or maybe even without a screen using a screen-reader, how can we keep up with all the latest features required to support these options? The answer is to use existing native HTML elements as a solid foundation.
 
-The base of any feature you work on should closely resemble an existing HTML element. This makes sure all the work browser developers put into the HTML renderer can be used as a starting, and maybe even finishing point.
+The base of any feature you work on should be an existing HTML element it most closely resembles. This makes sure all the work browser developers put into the HTML renderer can be used as a starting, and maybe even finishing point.
 
 ### There is no reason with the current state of web development you should be using a `<div>` for everything. There is often a better alternative which can more accurately describe your intent.
 
-If you are creating a button that doesn't navigate to a new page, use a `<button>` element, if you are creating a button or link that does navigates to a new page, you should use an `<a>` element. The same applies to navigation parents; a list of anchor tags should be a `<nav>` element, while a menu that has interactive, non-link, items should use a `<menu>` element.
+If you are creating a button that doesn't navigate to a new page, use a `<button>` tag, if you are creating a button that does navigate to a new page, you should use an `<a>` tag since it is effectively a link. The same logic applies to navigation parents; a list of anchor tags should be in a `<nav>` container, while a menu that has interactive, non-link, items should be in a `<menu>` container.
 
-There are quite a lot of native HTML elements we can use to enhance our components to give them the most support and features "out of the box." In this article we are going to dive into the native HTML disclosure elements to build an accordion component, learn how to use and extend it, all with vanilla JS and optionally some other popular JS frameworks.
+There are quite a lot of native HTML elements we can use to enhance our components to give them the most support and features "out of the box." In this article we are going to dive into the native HTML disclosure elements, `<details>` and `<summary>`, to build an accordion component. We will then learn how to use and extend it, all with vanilla JS and optionally some other popular JS frameworks.
 
 ## The Details/Summary Disclosure Elements
 
