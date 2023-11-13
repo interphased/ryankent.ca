@@ -3,9 +3,9 @@
 
   onMount(() => {
     const swapInnerHtmlWithResponse = (el: HTMLElement) => fetch(el.dataset.href as string)
-      .then((response) => response.text())
-      .then((text) => {
-        el.innerHTML = text;
+      .then((response) => response.json())
+      .then((data) => {
+        el.innerHTML = data.content;
       });
 
     const handleVisibilityChanged: IntersectionObserverCallback = (entries) => {
@@ -15,8 +15,8 @@
         }
       });
     }
-    
-    let element = document.querySelector("[data-intersect]");
+
+    let element = document.querySelector("[data-intersect-json]");
 
     if (element) {
       let options = {
@@ -32,8 +32,8 @@
 </script>
 
 <details>
-  <summary>Fetch the external HTML content when it is revealed.</summary>
-  <article data-intersect data-href="/api/demo/details-summary">
+  <summary>Fetch the external JSON content when it is revealed.</summary>
+  <article data-intersect-json data-href="/api/demo/details-summary.json">
     Loading...
   </article>
 </details>

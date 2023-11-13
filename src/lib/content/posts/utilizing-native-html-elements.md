@@ -23,6 +23,7 @@ published: true
   import Disclosure3 from '$lib/components/blog/details-summary/Disclosure3.svelte';
   import Disclosure4 from '$lib/components/blog/details-summary/Disclosure4.svelte';
   import Disclosure5 from '$lib/components/blog/details-summary/Disclosure5.svelte';
+  import Disclosure6 from '$lib/components/blog/details-summary/Disclosure6.svelte';
 </script>
 
 When developing for the web you should always look to implement existing, native, semantic elements and features before adding unnecessary third-party code or reinventing the wheel. It's the same reason we don't scrolljack the window anymore: users want to consume the content in the most familiar and least obtrusive way possible. Since your users could be using any device from the last decade, with any screen size, or maybe even without a screen using a screen-reader, how can we keep up with all the latest features required to support these options? The answer is to use existing native HTML elements as a solid foundation.
@@ -200,7 +201,7 @@ This is where our disclosure component becomes a beautiful thing. Since it is al
 
 ```html
 <details>
-  <summary>Fetch the external content when it is revealed.</summary>
+  <summary>Fetch the external HTML content when it is revealed.</summary>
   <article data-intersect data-href="/content-to-fetch">
     <!-- This content will be replaced, so we can leave a loading message -->
     Loading...
@@ -239,7 +240,7 @@ This is where our disclosure component becomes a beautiful thing. Since it is al
 
 <Disclosure5 />
 
-Here, we use a couple attributes that our JS can hook into to make things work. The first is `data-intersect` which, when present, will tell our observer that this is an element it needs to watch. The second is `data-href` which we use to tell the observer what URL to fetch.
+Here, we use a couple attributes that our JS can hook into to make things work. The first is `data-intersect` which, when present, will tell our observer that this is an element it needs to watch. The second is `data-href` which we use to tell the observer what URL to fetch. The response is a simple HTML string, so we can swap it in using `el.innerHTML`.
 
 This example obviously requires you to trust the server you are fetching data from, and know the response. It doesn't do any error handling or safe typing because they aren't necessary for the purposes of this article.
 
@@ -249,7 +250,7 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external content when it is revealed</summary>
+  <summary>Fetch the external HTML content when it is revealed</summary>
   <article hx-get="/content-to-fetch" hx-trigger="intersect">
     Loading...
   </article>
@@ -260,7 +261,7 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external content when it is revealed</summary>
+  <summary>Fetch the external HTML content when it is revealed</summary>
   <turbo-frame id="content" src="/content-to-fetch" loading="lazy">
     Loading...
   </turbo-frame>
@@ -271,7 +272,7 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external content when it is revealed</summary>
+  <summary>Fetch the external HTML content when it is revealed</summary>
   <article
     x-data="{
       swapInnerHtmlWithResponse() {
@@ -286,6 +287,31 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
   </article>
 </details>
 ```
+
+### Only a lunatic would work with HTML fragment responses. Use JSON!
+
+With the current state of web development you never know. It seems we've come full circle. But just to be explicit, it's straightforward to work with a JSON API as well. Simply modify the `swapInnerHtmlWithResponse` function to handle the JSON response and put the contents inside.
+
+#### Javascript
+
+```js
+// Example response object:
+// {
+//   id: 1,
+//   summary: 'Fetch the external JSON content when it is revealed.',
+//   content: 'The returned JSON content! Check your network monitor.'
+// }
+
+const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
+  .then((response) => response.json())
+  .then((data) => {
+    el.innerHTML = data.content;
+  });
+```
+
+#### Example
+
+<Disclosure6 />
 
 ## Accessibility
 
