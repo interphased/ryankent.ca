@@ -1,3 +1,5 @@
+export const prerender = true;
+
 export const GET = async () => {
   const headers = { headers: { 'Content-Type': 'text/html' }}
 

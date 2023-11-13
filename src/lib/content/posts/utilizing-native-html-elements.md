@@ -18,12 +18,12 @@ published: true
 ---
 
 <script>
-  import Disclosure1 from '$lib/components/blog/details-summary/Disclosure1.svelte';
-  import Disclosure2 from '$lib/components/blog/details-summary/Disclosure2.svelte';
-  import Disclosure3 from '$lib/components/blog/details-summary/Disclosure3.svelte';
-  import Disclosure4 from '$lib/components/blog/details-summary/Disclosure4.svelte';
-  import Disclosure5 from '$lib/components/blog/details-summary/Disclosure5.svelte';
-  import Disclosure6 from '$lib/components/blog/details-summary/Disclosure6.svelte';
+  import Disclosure1 from '$lib/components/demo/details-summary/Disclosure1.svelte';
+  import Disclosure2 from '$lib/components/demo/details-summary/Disclosure2.svelte';
+  import Disclosure3 from '$lib/components/demo/details-summary/Disclosure3.svelte';
+  import Disclosure4 from '$lib/components/demo/details-summary/Disclosure4.svelte';
+  import Disclosure5 from '$lib/components/demo/details-summary/Disclosure5.svelte';
+  import Disclosure6 from '$lib/components/demo/details-summary/Disclosure6.svelte';
 </script>
 
 When developing for the web you should always look to implement existing, native, semantic elements and features before adding unnecessary third-party code or reinventing the wheel. It's the same reason we don't scrolljack the window anymore: users want to consume the content in the most familiar and least obtrusive way possible. Since your users could be using any device from the last decade, with any screen size, or maybe even without a screen using a screen-reader, how can we keep up with all the latest features required to support these options? The answer is to use existing native HTML elements as a solid foundation.

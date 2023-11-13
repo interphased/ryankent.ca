@@ -7,14 +7,14 @@
 
 <script>
   import Time from '$lib/components/Time.svelte';
+  import SubHeader from '$lib/components/SubHeader.svelte'
 
   export let data;
 </script>
 
-<header class="subheader">
-  <h1>Blog</h1>
-  <p>Showing <strong>{data.posts.length}</strong> Articles</p>
-</header>
+<SubHeader total={data.posts.length}>
+  Blog
+</SubHeader>
 
 {#if data.posts.length}
   {#each data.posts as post}
@@ -36,18 +36,3 @@
     <p>Sorry, no posts could be found. Please check back again later.</p>
   </article>
 {/if}
-
-<style>
-  .subheader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .subheader > p,
-  .subheader > h1 {
-    margin-bottom: 0;
-  }
-</style>

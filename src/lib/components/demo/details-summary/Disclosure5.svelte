@@ -33,7 +33,7 @@
 
 <details>
   <summary>Fetch the external HTML content when it is revealed.</summary>
-  <article data-intersect data-href="/api/demo/details-summary">
+  <article data-intersect data-href="/api/demo/details-summary.html">
     Loading...
   </article>
 </details>

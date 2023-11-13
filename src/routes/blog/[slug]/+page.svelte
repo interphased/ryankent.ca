@@ -7,7 +7,7 @@
 </svelte:head>
 
 <script>
-  import Time from '$lib/components/Time.svelte';
+	import ArticleHeader from '$lib/components/ArticleHeader.svelte';
 
   export let data;
   const { title, description, keywords, date, content: Content } = data;
@@ -21,10 +21,9 @@
 </header>
 
 <article>
-  <header class="article-header">
-    <h1>{title}</h1>
-    <Time {date} />
-  </header>
+  <ArticleHeader {date}>
+    {title}
+  </ArticleHeader>
 
   <svelte:component this={Content} />
 </article>
@@ -41,12 +40,5 @@
 
   svg {
     fill: var(--accent-color);
-  }
-
-  .article-header {
-    background: var(--article-header-bg-color);
-    margin: -2rem -2rem 2rem -2rem;
-    padding: 2rem;
-    border-radius: 0.5rem 0.5rem 0 0;
   }
 </style>
