@@ -1,6 +1,6 @@
 ---
 title: "Utilizing Native HTML Elements"
-date: 2023-11-12
+date: 2023-11-13T12:00:00.000Z
 description: There are quite a lot of native HTML elements we can use to enhance our components to give them the most support and features "out of the box." In this article we are going to dive into the native HTML disclosure elements to build an accordion component, learn how to use and extend it, all with vanilla JS and optionally some other popular JS frameworks.
 keywords:
   - HTML

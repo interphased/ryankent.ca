@@ -11,7 +11,7 @@
 </script>
 
 <header>
-  <img src="/profile.webp" alt="profile" />
+  <img src="/profile.jpg" alt="profile" />
   <h1>Hi, my name is <span>Ryan Kent</span></h1>
   <h3>I'm a web application developer specializing in performant, intuitive, user-focused applications and interfaces.</h3>
   <p>I currently live in Toronto, Canada, and work passionately on all the interesting products at <a href="https://vidcruiter.com" target="_blank">VidCruiter</a>.</p>

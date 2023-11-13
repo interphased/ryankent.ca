@@ -1,6 +1,6 @@
 <header class="container">
   <a href="/">
-    <img src="/profile.webp" alt="profile" />
+    <img src="/profile.jpg" alt="profile" />
   </a>
   <h1>
     <span>
@@ -20,13 +20,14 @@
   }
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
   }
 
   h1 {
     margin-bottom: 0;
+    margin-top: -0.6rem;
   }
 
   a {
