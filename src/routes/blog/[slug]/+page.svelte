@@ -7,7 +7,7 @@
 </svelte:head>
 
 <script>
-	import ArticleHeader from '$lib/components/ArticleHeader.svelte';
+  import ArticleHeader from '$lib/components/ArticleHeader.svelte';
 
   export let data;
   const { title, description, keywords, date, content: Content } = data;
@@ -24,7 +24,6 @@
   <ArticleHeader {date}>
     {title}
   </ArticleHeader>
-
   <svelte:component this={Content} />
 </article>
 

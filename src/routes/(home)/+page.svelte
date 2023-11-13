@@ -7,26 +7,31 @@
 
 <script>
   import ContactForm from '$lib/components/ContactForm.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <header>
   <img src="/profile.webp" alt="profile" />
   <h1>Hi, my name is <span>Ryan Kent</span></h1>
-  <p>I'm a web application developer from Toronto, Canada.</p>
-  <p>I have been working in the web for a long time. I started <a href="https://interphased.com" target="_blank">Interphased</a> back in 2008 and put my heart into that for over a decade. We made lots of cool products and applications for clients all across the world.</p>
-  <p>Nowadays, you can find me working passionately on all the interesting products at <a href="https://vidcruiter.com" target="_blank">VidCruiter</a>.</p>
+  <h3>I'm a web application developer specializing in performant, intuitive, user-focused applications and interfaces.</h3>
+  <p>I currently live in Toronto, Canada, and work passionately on all the interesting products at <a href="https://vidcruiter.com" target="_blank">VidCruiter</a>.</p>
+  <p>I have been in cyberspace for a long time. In 2008 I started <a href="https://interphased.com" target="_blank">Interphased</a> and put my heart into all the work we did there for over a decade. We made lots of cool products and applications for clients all across the world.</p>
 </header>
 
 <section>
-  <h2>Read more</h2>
-  <p>I sometimes write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
+  <h4><strong>Read more</strong></h4>
+  <p>Sometimes I write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
 </section>
 
 <section>
-  <h2>Send me a message</h2>
+  <h4><strong>Send me a message</strong></h4>
   <p>Feel free to contact me for any personal or business request.</p>
   <ContactForm />
 </section>
+
+<Footer social>
+  <p>You can also reach me via email or social media</p>
+</Footer>
 
 <style>
   img {

@@ -59,17 +59,17 @@ input[type="reset"] {
 }
 
 :root {
-	--accent-color: #a4b84c;
-	--bg-color: #fafafa;
-	--bg-gradient: linear-gradient(0deg, #eee, #fafafa, #fff);
-	--heading-color: #474747;
+	--accent-color: #8da817;
+	--bg-color: #f6f9f2;
+	--bg-gradient: linear-gradient(0deg, #eceee9, #fff);
+	--heading-color: #444;
 	--text-color: #676767;
 	--line-height: 1.8rem;
 	--font-sans: 'Inter', Helvetica, Arial, sans-serif;
 	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--code-bg-color: rgba(0, 0, 0, 0.1);
+	--code-bg-color: #eceee9;
 	--input-bg-color: #fff;
-	--input-text-color: #474747;
+	--input-text-color: #444;
 	--input-border-color: #dedede;
 	--input-placeholder-color: rgba(0,0,0,0.7);
 	--button-bg-color: rgb(36, 41, 47);
@@ -80,8 +80,8 @@ input[type="reset"] {
 	--error-text-color: #592c22;
 	--article-bg-color: #fff;
 	--article-border-color: #dedede;
-	--time-color: #888;
-	--article-header-bg-color: var(--code-bg-color);
+	--time-color: rgba(0,0,0,0.5);
+	--article-header-bg-color: #eceee9;
 }
 
 html {
@@ -99,8 +99,8 @@ html {
 
 h1 {
 	color: var(--heading-color);
-	font-size: 2rem;
-	margin-bottom: 2rem;
+	font-size: 2.2rem;
+	margin-bottom: 1.8rem;
 	font-weight: 700;
 	line-height: calc(var(--line-height) * 1.4);
 }
@@ -122,7 +122,7 @@ h2 {
 h3 {
 	color: var(--heading-color);
 	font-size: 1.4rem;
-	margin: 0 0 1rem 0;
+	margin: 0 0 1.4rem 0;
 	font-weight: 300;
 	line-height: calc(var(--line-height) * 1.2);
 }
@@ -132,7 +132,7 @@ h4 {
 	font-size: 1rem;
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
-	margin: 0 0 1rem 0;
+	margin: 2rem 0 1rem 0;
 	font-weight: 300;
 	line-height: var(--line-height);
 }
@@ -290,7 +290,7 @@ a:hover {
 }
 
 .container-sm {
-	max-width: 30rem;
+	max-width: 40rem;
 	margin: 2rem;
 }
 
@@ -345,7 +345,7 @@ a:hover {
 		--error-text-color: #dccecb;
 		--article-bg-color: rgba(0, 0, 0, 0.2);
 		--article-border-color: rgb(36, 41, 47);
-		--time-color: #fff;
+		--time-color: rgba(255,255,255,0.6);
 		--code-bg-color: #1f1e24;
 		--article-header-bg-color: #383642;
 	}

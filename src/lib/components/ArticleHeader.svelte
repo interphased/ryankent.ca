@@ -8,7 +8,9 @@
   <h1>
     <slot />
   </h1>
-  <Time {date} />
+  <div class="meta">
+    <Time {date} />
+  </div>
 </header>
 
 <style>
@@ -17,5 +19,13 @@
     margin: -2rem -2rem 2rem -2rem;
     padding: 2rem;
     border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
 </style>
