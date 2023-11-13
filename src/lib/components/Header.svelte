@@ -4,7 +4,7 @@
   </a>
   <h1>
     <span>
-      <a href="/blog">Ryan Kent</a>
+      <a href="/">Ryan Kent</a>
     </span>
   </h1>
 </header>
@@ -16,6 +16,7 @@
     justify-content: start;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 3rem;
   }
 
   img {

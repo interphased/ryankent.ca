@@ -8,7 +8,7 @@
 
 <details bind:open={open}>
   <summary>A disclosure which can be controled by a separate button</summary>
-  <div>The content, which may or may not be revealed because it is determined by the state of the open attribute.</div>
+  <article>The content, which may or may not be revealed because it is determined by the state of the open attribute.</article>
 </details>
 
 <style>
@@ -26,6 +26,11 @@
 
   details > * {
     padding: 1rem;
+  }
+
+  details > article {
+    background: lavender;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
   summary {

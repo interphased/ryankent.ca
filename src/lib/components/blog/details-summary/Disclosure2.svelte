@@ -1,11 +1,10 @@
 <details>
   <summary>A stylized summary used as a label for the content.</summary>
-  <div>The content, tucked away until the user performs an action to display it.</div>
+  <article>The content, tucked away until the user performs an action to display it.</article>
 </details>
 
 <style>
   details {
-    background: lavender;
     border-radius: 0.5rem;
     color: indigo;
     margin-bottom: 2rem;
@@ -13,6 +12,11 @@
 
   details > * {
     padding: 1rem;
+  }
+
+  details > article {
+    background: lavender;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
   summary {

@@ -11,8 +11,9 @@
   export let data;
 </script>
 
-<header>
+<header class="subheader">
   <h1>Blog</h1>
+  <p>Showing <strong>{data.posts.length}</strong> Articles</p>
 </header>
 
 {#if data.posts.length}
@@ -35,3 +36,18 @@
     <p>Sorry, no posts could be found. Please check back again later.</p>
   </article>
 {/if}
+
+<style>
+  .subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .subheader > p,
+  .subheader > h1 {
+    margin-bottom: 0;
+  }
+</style>

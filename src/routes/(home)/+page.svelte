@@ -13,9 +13,14 @@
   <img src="/profile.webp" alt="profile" />
   <h1>Hi, my name is <span>Ryan Kent</span></h1>
   <p>I'm a web application developer from Toronto, Canada.</p>
-  <p>I started <a href="https://interphased.com" target="_blank">Interphased</a> back in 2008 and put my heart into that for the majority of my career. We made lots of cool products and applications for clients all across the world.</p>
+  <p>I have been working in the web for a long time. I started <a href="https://interphased.com" target="_blank">Interphased</a> back in 2008 and put my heart into that for over a decade. We made lots of cool products and applications for clients all across the world.</p>
   <p>Nowadays, you can find me working passionately on all the interesting products at <a href="https://vidcruiter.com" target="_blank">VidCruiter</a>.</p>
 </header>
+
+<section>
+  <h2>Read more</h2>
+  <p>I sometimes write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
+</section>
 
 <section>
   <h2>Send me a message</h2>

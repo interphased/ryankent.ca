@@ -6,7 +6,7 @@
 <div class="home">
   <main class="container-sm">
     <slot />
-    <Footer>
+    <Footer social>
       <p><strong>You can also reach me via email or social media</strong></p>
     </Footer>
   </main>

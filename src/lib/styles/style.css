@@ -80,7 +80,8 @@ input[type="reset"] {
 	--error-text-color: #592c22;
 	--article-bg-color: #fff;
 	--article-border-color: #dedede;
-	--time-color: #999;
+	--time-color: #888;
+	--article-header-bg-color: var(--code-bg-color);
 }
 
 html {
@@ -96,20 +97,12 @@ html {
 	font-weight: 400;
 }
 
-code {
-	font-family: var(--font-mono);
-	font-weight: 700;
-	background: var(--code-bg-color);
-	padding: 0.1rem 0.4rem;
-	border-radius: 0.2rem;
-}
-
 h1 {
 	color: var(--heading-color);
 	font-size: 2rem;
 	margin-bottom: 2rem;
 	font-weight: 700;
-	line-height: var(--line-height);
+	line-height: calc(var(--line-height) * 1.4);
 }
 
 h1 > span {
@@ -121,9 +114,9 @@ h1 > span {
 h2 {
 	color: var(--heading-color);
 	font-size: 1.8rem;
-	margin: 0 0 1rem 0;
+	margin: 2rem 0 1rem 0;
 	font-weight: 500;
-	line-height: var(--line-height);
+	line-height: calc(var(--line-height) * 1.3);
 }
 
 h3 {
@@ -131,7 +124,7 @@ h3 {
 	font-size: 1.4rem;
 	margin: 0 0 1rem 0;
 	font-weight: 300;
-	line-height: var(--line-height);
+	line-height: calc(var(--line-height) * 1.2);
 }
 
 h4 {
@@ -167,6 +160,22 @@ ul li {
 
 strong {
 	font-weight: 800;
+}
+
+small {
+	font-size: 0.8rem;
+}
+
+em {
+	font-style: italic;
+}
+
+code {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	background: var(--code-bg-color);
+	padding: 0.1rem 0.4rem;
+	border-radius: 0.2rem;
 }
 
 textarea, input {
@@ -236,7 +245,11 @@ article h2 {
 	margin-bottom: 1rem;
 }
 
-article h3,
+article h3 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
 article h4 {
 	margin-top: 2rem;
 	margin-bottom: 1rem;
@@ -260,8 +273,8 @@ article *:last-child {
 }
 
 blockquote {
-	border-left: 0.3rem solid var(--accent-color);
-	background: rgba(0,0,0,0.1);
+	border-left: 0.5rem solid var(--accent-color);
+	background: var(--code-bg-color);
 	padding: 1rem;
 	margin-bottom: 1rem;
 }
@@ -333,7 +346,8 @@ a:hover {
 		--article-bg-color: rgba(0, 0, 0, 0.2);
 		--article-border-color: rgb(36, 41, 47);
 		--time-color: #fff;
-		--code-bg-color: rgba(0, 0, 0, 0.3);
+		--code-bg-color: #1f1e24;
+		--article-header-bg-color: #383642;
 	}
 }
 

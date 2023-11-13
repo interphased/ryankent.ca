@@ -40,9 +40,9 @@
 
 <details>
   <summary>Fetch the external content when it is revealed.</summary>
-  <div data-intersect data-href="/demo/details-summary">
+  <article data-intersect data-href="/demo/details-summary">
     Loading...
-  </div>
+  </article>
 </details>
 
 <style>
@@ -55,6 +55,11 @@
 
   details > * {
     padding: 1rem;
+  }
+
+  details > article {
+    background: lavender;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
   summary {

@@ -1,6 +1,6 @@
 <details open>
   <summary>An open disclosure.</summary>
-  <div>The content, already revealed because the parent details element has an open attribute.</div>
+  <article>The content, already revealed because details has the open attribute.</article>
 </details>
 
 <style>
@@ -13,6 +13,11 @@
 
   details > * {
     padding: 1rem;
+  }
+
+  details > article {
+    background: lavender;
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
   summary {
