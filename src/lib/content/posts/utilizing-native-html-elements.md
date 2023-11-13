@@ -10,7 +10,7 @@ keywords:
   - Svelte
   - HTMX
   - AlpineJS
-  - Hotwired Turbo
+  - Hotwire Turbo
   - Web
   - Web Development
   - Native HTML Elements
@@ -26,7 +26,7 @@ published: true
   import Disclosure6 from '$lib/components/demo/details-summary/Disclosure6.svelte';
 </script>
 
-When developing for the web you should always look to implement existing, native, semantic elements and features before adding unnecessary third-party code or reinventing the wheel. It's the same reason we don't scrolljack the window anymore: users want to consume the content in the most familiar and least obtrusive way possible. Since your users could be using any device from the last decade, with any screen size, or maybe even without a screen using a screen-reader, how can we keep up with all the latest features required to support these options? The answer is to use existing native HTML elements as a solid foundation.
+When developing for the web you should always look to implement existing, native, semantic elements and features before adding unnecessary third-party code or reinventing the wheel. It's the same reason we don't scroll-jack the window anymore: users want to consume the content in the most familiar and least obtrusive way possible. Since your users could be using any device from the last decade, with any screen size, or maybe even without a screen using a screen-reader, how can we keep up with all the latest features required to support these options? The answer is to use existing native HTML elements as a solid foundation.
 
 The base of any feature you work on should closely resemble an existing HTML element. This makes sure all the work browser developers put into the HTML renderer can be used as a starting, and maybe even finishing point.
 
@@ -38,7 +38,7 @@ There are quite a lot of native HTML elements we can use to enhance our componen
 
 ## The Details/Summary Disclosure Elements
 
-Let's say we want to have a panel with a title, and that when clicked it will open to reveal new content, or if was already open then collapse to hide the content. This is a common pattern used for across the web, commonly found in FAQ sections. There are hundreds of different JS packages that have been created to handle this seemingly simple functionality. But the core functionality of this is already possible to do without any additional plugins. And in fact, it is natively supported accross all browsers and fully accessible.
+Let's say we want to have a panel with a title, and that when clicked it will open to reveal new content, or if was already open then collapse to hide the content. This is a common pattern used for across the web, commonly found in FAQ sections. There are hundreds of different JS packages that have been created to handle this seemingly simple functionality. But the core functionality of this is already possible to do without any additional plugins. And in fact, it is natively supported across all browsers and fully accessible.
 
 Feast your eyes on the `<details>` and `<summary>` elements.
 
@@ -144,8 +144,8 @@ Now that we know about the `open` attribute, we can assume it will keep track of
   Toggle the disclosure open/closed
 </button>
 
-<details id="toggleable-details">
-  <summary>A disclosure which can be controled by a separate button</summary>
+<details id="toggle-details">
+  <summary>A disclosure which can be controlled by a separate button</summary>
   <article>
     The content, which may or may not be revealed because it is determined by the state of the open attribute.
   </article>
@@ -153,7 +153,7 @@ Now that we know about the `open` attribute, we can assume it will keep track of
 
 <script>
   function toggleDetails() {
-    details = document.getElementById("toggleable-details");
+    details = document.getElementById("toggle-details");
     details.toggleAttribute("open");
   }
 </script>
@@ -315,7 +315,7 @@ const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
 
 ## Accessibility
 
-If you are reading this on a computer, press the `TAB` button. Notice how all the disclosures already have full accessible controls, you can tab through them as you would links or buttons, and press `ENTER` or `SPACE` to open and close them. Even the separate button to control the disclosure works and you didn't have to do a thing to enable that. It's like magic. A screenreader will also read an open disclosure like so:
+If you are reading this on a computer, press the `TAB` button. Notice how all the disclosures already have full accessible controls, you can tab through them as you would links or buttons, and press `ENTER` or `SPACE` to open and close them. Even the separate button to control the disclosure works and you didn't have to do a thing to enable that. It's like magic. A screen reader will also read an open disclosure like so:
 
 > "The summary text. Expanded, summary, group."
 
@@ -327,6 +327,6 @@ For the people that aren't very familiar with using a voiceover tool this may so
 
 ## That's a wrap
 
-So there you have it! I hope you've learned a thing or two about using native HTML elements as the basis for all your components, and how the details/summary elements work and how to supercharge them with asyncronous content.
+So there you have it! I hope you've learned a thing or two about using native HTML elements as the basis for all your components, and how the details/summary elements work and how to supercharge them with asynchronous content.
 
 It amazes me that so many developers don't take advantage of these free features and try to reinvent them, and ultimately either fail or end up having to fix bugs and do support/maintenance on their components for a long time.
