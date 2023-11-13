@@ -28,8 +28,10 @@
   on:submit|preventDefault={handleSubmit}
   name="contact"
   method="POST"
+  netlify-honeypot="bot-field"
   data-netlify="true"
   id="contact">
+  <input type="hidden" name="form-name" value="contact" />
   <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required bind:value={email} />
   <textarea name="message" aria-label="Message" rows="4" required placeholder="Hi! I'm contacting you because..." bind:value={message}></textarea>
   {#if success}
