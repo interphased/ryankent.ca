@@ -1,9 +1,9 @@
 type Post = {
   metadata: {
-    content: string
     title: string
     date: string
     description: string
+    keywords: string[]
     published: boolean
   }
 }

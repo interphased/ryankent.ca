@@ -24,7 +24,9 @@
   <ArticleHeader {date}>
     {title}
   </ArticleHeader>
-  <svelte:component this={Content} />
+  <div class="article-body">
+    <svelte:component this={Content} />
+  </div>
 </article>
 
 <style>

@@ -1,7 +1,27 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
   import Time from '$lib/components/Time.svelte';
 
   export let date: string;
+
+  function calculateReadTime(article: string) {
+    const wpm = 220;
+    const words = article.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+
+    return time;
+  }
+
+  let readTime = 0;
+
+  onMount(() => {
+    let article = document.querySelector<HTMLElement>('.article-body');
+
+    if (article) {
+      readTime = calculateReadTime(article.innerText);
+    }
+  });
 </script>
 
 <header class="article-header">
@@ -10,6 +30,10 @@
   </h1>
   <div class="meta">
     <Time {date} />
+    {#if readTime}
+      <span class="read-time">&middot;</span>
+      <span class="read-time">{readTime} min read</span>
+    {/if}
   </div>
 </header>
 
@@ -24,8 +48,11 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
+  }
+  .read-time {
+    color: var(--time-color);
   }
 </style>
