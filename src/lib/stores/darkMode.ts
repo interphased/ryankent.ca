@@ -1,7 +1,7 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
 
-const defaultValue = 'false';
+const defaultValue = browser ? String(window.matchMedia("(prefers-color-scheme:dark)").matches) : 'false';
 const initialValue = browser ? window.localStorage.getItem('darkMode') ?? defaultValue : defaultValue;
 
 export const darkMode = writable<string>(initialValue);
