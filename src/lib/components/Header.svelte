@@ -1,22 +1,32 @@
 <header class="container">
-  <a href="/">
-    <img src="/profile.jpg" alt="profile" />
-  </a>
-  <h1>
-    <span>
-      <a href="/">Ryan Kent</a>
-    </span>
-  </h1>
+  <div class="branding">
+    <a href="/">
+      <img src="/profile.jpg" alt="profile" />
+    </a>
+    <h1>
+      <span>
+        <a href="/">Ryan Kent</a>
+      </span>
+    </h1>
+  </div>
 </header>
 
 <style>
   header {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     margin-bottom: 3rem;
+  }
+
+  .branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
   }
 
   img {

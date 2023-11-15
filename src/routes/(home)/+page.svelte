@@ -7,6 +7,7 @@
 
 <script>
   import ContactForm from '$lib/components/ContactForm.svelte';
+	import DarkModeButton from '$lib/components/DarkModeButton.svelte';
   import Footer from '$lib/components/Footer.svelte';
 </script>
 
