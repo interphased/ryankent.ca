@@ -30,7 +30,7 @@ When developing for the web you should always look to implement existing, native
 
 The base of any feature you work on should be an existing HTML element it most closely resembles. This makes sure all the work browser developers put into the HTML renderer can be used as a starting, and maybe even finishing point.
 
-> ### There is no reason with the current state of web development you should be using a `<div>` for everything. There is often a better alternative which can more accurately describe your intent.
+> ### With the current state of web development there is simply no reason you should be using a `<div>` for everything. There is often a better alternative which can more accurately describe your intent.
 
 If you are creating a button that doesn't navigate to a new page, use a `<button>` tag, if you are creating a button that does navigate to a new page, you should use an `<a>` tag since it is effectively a link. The same logic applies to navigation parents; a list of anchor tags should be in a `<nav>` container, while a menu that has interactive, non-link, items should be in a `<menu>` container.
 
