@@ -49,8 +49,9 @@ In order to prevent the codebase from ever becoming upgradable, we have to make 
 
 
 ## Use a naming convention that makes business sense
-- It's better to have a few different models that have duplicated behviours than one generic "business process." Nobody knows what that means. It should be something that not just the development team can understand. There should not have to be an entire translation required in your brain to convert what a support rep, sales rep, manager, or customer mentions into the actual thing you need to work on as a developer.
-- Don't name things so specifically generic that they could be misinterpretted as something else. For example, naming something "bucket" is pretty generic, but that term is used so predominantly with S3 it would be detrimental to use it in your logic unless it is referring to S3.
+It's better to have a few different models that have duplicated behaviours than one generic "business process." Nobody knows what that means. It should be something that not just the development team can understand. There should not have to be an entire translation required in your brain to convert what a support rep, sales rep, manager, or customer is talking about into the actual thing you need to work on as a developer.
+
+Also, don't name things so specifically generic that they could be misinterpreted as something else. For example, naming something "bucket" is pretty generic, but that term is used so predominantly with S3 it would be detrimental to use it in your logic unless it is referring to S3.
 
 ## Document everything
 Except the thing that matters.

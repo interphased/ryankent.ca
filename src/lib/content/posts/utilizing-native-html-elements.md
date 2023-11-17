@@ -30,7 +30,7 @@ When developing for the web you should always look to implement existing, native
 
 The base of any feature you work on should be an existing HTML element it most closely resembles. This makes sure all the work browser developers put into the HTML renderer can be used as a starting, and maybe even finishing point.
 
-### There is no reason with the current state of web development you should be using a `<div>` for everything. There is often a better alternative which can more accurately describe your intent.
+> ### There is no reason with the current state of web development you should be using a `<div>` for everything. There is often a better alternative which can more accurately describe your intent.
 
 If you are creating a button that doesn't navigate to a new page, use a `<button>` tag, if you are creating a button that does navigate to a new page, you should use an `<a>` tag since it is effectively a link. The same logic applies to navigation parents; a list of anchor tags should be in a `<nav>` container, while a menu that has interactive, non-link, items should be in a `<menu>` container.
 
@@ -55,7 +55,7 @@ The details element creates a disclosure widget with a triangle arrow on the lef
 
 #### Example
 
-<Disclosure1 />
+> <Disclosure1 />
 
 ## Making it pretty
 
@@ -108,7 +108,7 @@ Neat! Although, it does look pretty basic. But the beautiful thing is that this 
 
 #### Example
 
-<Disclosure2 />
+> <Disclosure2 />
 
 ## Open sesame
 
@@ -131,7 +131,7 @@ Absolutely!
 
 #### Example
 
-<Disclosure3 />
+> <Disclosure3 />
 
 ## External controls
 
@@ -161,9 +161,9 @@ Now that we know about the `open` attribute, we can assume it will keep track of
 
 #### Example
 
-<Disclosure4 />
+> <Disclosure4 />
 
-### What about JS frameworks?
+## What about JS frameworks?
 
 If you use a JS framework like [Svelte](https://svelte.dev/), it's even easier. The same pattern applies to frameworks like [Vue](https://vuejs.org/) or [React](https://react.dev/), you just need to bind the open state as a prop on the `details` element.
 
@@ -238,7 +238,7 @@ This is where our disclosure component becomes a beautiful thing. Since it is al
 
 #### Example
 
-<Disclosure5 />
+> <Disclosure5 />
 
 Here, we use a couple attributes that our JS can hook into to make things work. The first is `data-intersect` which, when present, will tell our observer that this is an element it needs to watch. The second is `data-href` which we use to tell the observer what URL to fetch. The response is a simple HTML string, so we can swap it in using `el.innerHTML`.
 
@@ -288,7 +288,7 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 </details>
 ```
 
-### Only a lunatic would work with HTML fragment responses. Use JSON!
+## Only a lunatic would work with HTML fragment responses. Use JSON!
 
 With the current state of web development you never know. It seems we've come full circle. But just to be explicit, it's straightforward to work with a JSON API as well. Simply modify the `swapInnerHtmlWithResponse` function to handle the JSON response and put the contents inside.
 
@@ -311,17 +311,17 @@ const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
 
 #### Example
 
-<Disclosure6 />
+> <Disclosure6 />
 
 ## Accessibility
 
 If you are reading this on a computer, press the `TAB` button. Notice how all the disclosures already have full accessible controls, you can tab through them as you would links or buttons, and press `ENTER` or `SPACE` to open and close them. Even the separate button to control the disclosure works and you didn't have to do a thing to enable that. It's like magic. A screen reader will also read an open disclosure like so:
 
-> "The summary text. Expanded, summary, group."
+**"The summary text. Expanded, summary, group."**
 
 And a closed one:
 
-> "The summary text. Collapsed, summary, group."
+**"The summary text. Collapsed, summary, group."**
 
 For the people that aren't very familiar with using a voiceover tool this may sound weird, but to those that are this is a pretty optimal way to announce the content. And to reiterate, this functionality came for free, and will be supported for years and years over countless devices, many of which haven't even been dreamt of. If we end up having AI read websites to us, it's going to use the same HTML API that we are using now, and there will be no extra work on our end to support it.
 

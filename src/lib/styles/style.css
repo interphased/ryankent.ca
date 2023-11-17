@@ -80,7 +80,8 @@ body {
 	--bg-gradient: linear-gradient(0deg, #dee3db, #fcfff8);
 	--heading-color: #444;
 	--text-color: #676767;
-	--line-height: 1.8rem;
+	--heading-line-height: 1.4;
+	--line-height: 1.9;
 	--code-bg-color: var(--bg-color);
 	--input-bg-color: #fff;
 	--input-text-color: #444;
@@ -111,6 +112,7 @@ body.dark-mode {
 	--heading-color: #fafafa;
 	--accent-color: #CDDC39;
 	--text-color: #c9c9c9;
+	--line-height: 1.9;
 	--button-bg-color: rgb(36, 41, 47);
 	--input-border-color: rgb(36, 41, 47);
 	--input-bg-color: rgba(0, 0, 0, 0.2);
@@ -133,7 +135,7 @@ h1 {
 	font-size: 2.2rem;
 	margin-bottom: 1.8rem;
 	font-weight: 700;
-	line-height: calc(var(--line-height) * 1.4);
+	line-height: var(--heading-line-height);
 }
 
 h1 > span {
@@ -145,9 +147,9 @@ h1 > span {
 h2 {
 	color: var(--heading-color);
 	font-size: 1.8rem;
-	margin: 2rem 0 1rem 0;
+	margin: 0 0 1rem 0;
 	font-weight: 500;
-	line-height: calc(var(--line-height) * 1.3);
+	line-height: var(--heading-line-height);
 }
 
 h3 {
@@ -155,7 +157,7 @@ h3 {
 	font-size: 1.4rem;
 	margin: 0 0 1.4rem 0;
 	font-weight: 300;
-	line-height: calc(var(--line-height) * 1.2);
+	line-height: calc(var(--heading-line-height) * 1.2);
 }
 
 h4 {
@@ -165,7 +167,7 @@ h4 {
 	text-transform: uppercase;
 	margin: 2rem 0 1rem 0;
 	font-weight: 300;
-	line-height: var(--line-height);
+	line-height: calc(var(--heading-line-height) * 1.2);
 }
 
 p {
@@ -260,36 +262,51 @@ article {
 	margin-bottom: 1rem;
 }
 
-header {
-	margin-bottom: 1.5rem;
+header.article-body {
+	margin-bottom: 2rem;
 }
 
-article header h1,
-article header h2 {
+.article-header h1,
+.article-header h2 {
 	margin-top: 0;
 	margin-bottom: 1rem;
 }
 
-article h2 {
+.article-body h2 {
+	position: relative;
+	margin-top: 6rem;
+	margin-bottom: 2rem;
+	padding-bottom: 0.2rem;
+	border-left: 0.5rem solid var(--accent-color);
+	padding-left: 1rem;
+}
+
+/* .article-body h2::before {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -0.5rem;
+	left: 0;
+	width: 2rem;
+	border-bottom: 0.4rem solid var(--accent-color);
+} */
+
+.article-body h3 {
+	margin-top: 3rem;
+	margin-bottom: 2rem;
+}
+
+.article-body h4 {
 	margin-top: 3rem;
 	margin-bottom: 1rem;
 }
 
-article h3 {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+.article-body pre[class*="language-"] {
+	margin: 1rem 0 1rem 0;
+	padding: 1rem;
 }
 
-article h4 {
-	margin-top: 2rem;
-	margin-bottom: 1rem;
-}
-
-article pre[class*="language-"] {
-	margin-bottom: 1rem;
-}
-
-article pre > code[class*="language-"] {
+.article-body pre[class*="language-"] > code[class*="language-"] {
 	white-space: pre-wrap;
 	word-break: break-word;
 }
@@ -304,10 +321,18 @@ article *:last-child {
 }
 
 blockquote {
-	border-left: 0.5rem solid var(--accent-color);
-	background: var(--code-bg-color);
-	padding: 1rem;
-	margin-bottom: 1rem;
+	background: var(--article-header-bg-color);
+	padding: 1.5rem 2rem;
+	margin: 2rem 0;
+	border-radius: 0.5rem;
+}
+
+.article-body blockquote h1,
+.article-body blockquote h2,
+.article-body blockquote h3,
+.article-body blockquote h4,
+.article-body blockquote p {
+	margin: 0;
 }
 
 a {
@@ -365,6 +390,7 @@ a:hover {
 		--heading-color: #fafafa;
 		--accent-color: #CDDC39;
 		--text-color: #c9c9c9;
+		--line-height: 1.9;
 		--button-bg-color: rgb(36, 41, 47);
 		--input-border-color: rgb(36, 41, 47);
 		--input-bg-color: rgba(0, 0, 0, 0.2);
@@ -387,7 +413,7 @@ a:hover {
 		--bg-gradient: linear-gradient(0deg, #dee3db, #fcfff8);
 		--heading-color: #444;
 		--text-color: #676767;
-		--line-height: 1.8rem;
+		--line-height: 1.9;
 		--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 		--code-bg-color: var(--bg-color);

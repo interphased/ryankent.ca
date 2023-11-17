@@ -30,6 +30,9 @@
 </article>
 
 <style>
+  .subheader {
+    margin-bottom: 2rem;
+  }
   .subheader a {
     text-decoration: none;
     display: inline-flex;

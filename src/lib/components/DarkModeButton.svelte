@@ -22,16 +22,16 @@
 
 <style>
   button {
-    fill: var(--dark-mode-icon-fill);
-    background: var(--article-header-bg-color);
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     right: 1rem;
     top: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    fill: var(--dark-mode-icon-fill);
+    background: var(--article-header-bg-color);
   }
 </style>

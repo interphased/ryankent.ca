@@ -18,7 +18,7 @@
 
 {#if data.posts.length}
   {#each data.posts as post}
-      <article>
+      <article class="article-preview">
         <header>
           <h2>
             <a href="{post.path}">{post.meta.title}</a>
@@ -36,3 +36,9 @@
     <p>Sorry, no posts could be found. Please check back again later.</p>
   </article>
 {/if}
+
+<style>
+  .article-preview header {
+    margin-bottom: 2rem;
+  }
+</style>
