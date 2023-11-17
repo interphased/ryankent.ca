@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .branding {

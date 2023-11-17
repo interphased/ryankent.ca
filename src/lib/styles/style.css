@@ -104,6 +104,7 @@ body {
 	min-height: 100%;
 	padding: 0;
 	margin: 0;
+	line-height: var(--line-height);
 }
 
 body.dark-mode {
@@ -155,7 +156,7 @@ h2 {
 h3 {
 	color: var(--heading-color);
 	font-size: 1.4rem;
-	margin: 0 0 1.4rem 0;
+	margin: 0 0 1.5rem 0;
 	font-weight: 300;
 	line-height: calc(var(--heading-line-height) * 1.2);
 }
@@ -269,7 +270,7 @@ header.article-body {
 .article-header h1,
 .article-header h2 {
 	margin-top: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 .article-body h2 {
