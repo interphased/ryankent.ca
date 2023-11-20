@@ -8,33 +8,18 @@ const initialValue = browser ? window.localStorage.getItem('theme') as Theme ?? 
 
 export const theme = writable<Theme>(initialValue);
 
-if (browser) {
-  if (initialValue === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-}
-
-theme.subscribe((value: Theme) => {
+theme.subscribe((theme: Theme) => {
   if (!browser) {
     return;
   }
 
-  localStorage.setItem('theme', value);
-
-  if (value === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
+  localStorage.setItem('theme', theme);
+  theme === 'dark' && document.documentElement.setAttribute('data-theme', 'dark');
+  theme === 'light' && document.documentElement.setAttribute('data-theme', 'light');
 });
 
 export const toggleTheme = () => {
-  theme.update((t) => {
-    if (t === 'light') {
-      return 'dark';
-    }
-    return 'light';
+  theme.update((theme) => {
+    return theme === 'light' ? 'dark' : 'light';
   });
 }

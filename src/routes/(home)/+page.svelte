@@ -7,7 +7,7 @@
 
 <script>
   import ContactForm from '$lib/components/ContactForm.svelte';
-  import Footer from '$lib/components/Footer.svelte';
+	import Social from '$lib/components/Social.svelte';
 </script>
 
 <header>
@@ -29,9 +29,10 @@
   <ContactForm />
 </section>
 
-<Footer social>
+<footer>
   <p>You can also reach me via email or social media</p>
-</Footer>
+  <Social />
+</footer>
 
 <style>
   img {

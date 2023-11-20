@@ -1,5 +1,5 @@
-<script>
-  export let total;
+<script lang="ts">
+  export let total: number;
 </script>
 
 <header class="subheader">

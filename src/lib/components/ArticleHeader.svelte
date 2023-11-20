@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
   import Time from '$lib/components/Time.svelte';
 
   export let date: string;

@@ -5,7 +5,7 @@
   <meta name="og:description" content="Hi! I'm a web application developer from Toronto, Canada" />
 </svelte:head>
 
-<script>
+<script lang="ts">
   import Time from '$lib/components/Time.svelte';
   import SubHeader from '$lib/components/SubHeader.svelte'
 
@@ -18,15 +18,15 @@
 
 {#if data.posts.length}
   {#each data.posts as post}
-      <article class="article-preview">
-        <header>
-          <h2>
-            <a href="{post.path}">{post.meta.title}</a>
-          </h2>
-          <Time date={post.meta.date} />
-        </header>
-        <p>{post.meta.description}</p>
-      </article>
+    <article class="article-preview">
+      <header>
+        <h2>
+          <a href="{post.path}">{post.metadata.title}</a>
+        </h2>
+        <Time date={post.metadata.date} />
+      </header>
+      <p>{post.metadata.description}</p>
+    </article>
   {/each}
 {:else}
   <article>
