@@ -1,14 +1,12 @@
-export type Metadata = {
+export type Post = {
+  path: string,
+  metadata: {
     title: string
     date: string
     description: string
     keywords: string[]
     published: boolean
-}
-
-export type Post = {
-  metadata: Metadata,
-  path: string
+  }
 }
 
 type MarkdownFiles = Record<string, () => Promise<Post>>
