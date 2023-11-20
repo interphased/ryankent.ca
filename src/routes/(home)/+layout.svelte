@@ -1,7 +1,3 @@
-<script>
-  import '$lib/styles/style.css';
-</script>
-
 <div class="home">
   <main class="container-sm">
     <slot />

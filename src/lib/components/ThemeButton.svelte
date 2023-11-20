@@ -31,7 +31,7 @@
     width: 2.5rem;
     height: 2.5rem;
     padding: 0;
-    fill: var(--dark-mode-icon-fill);
-    background: var(--article-header-bg-color);
+    fill: var(--theme-button-icon-fill);
+    background: var(--theme-button-bg-color);
   }
 </style>
