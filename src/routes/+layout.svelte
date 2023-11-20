@@ -1,7 +1,7 @@
 <script>
-	import DarkModeButton from '$lib/components/DarkModeButton.svelte';
+	import ThemeButton from '$lib/components/ThemeButton.svelte';
 </script>
 
 <slot />
 
-<DarkModeButton />
+<ThemeButton />
