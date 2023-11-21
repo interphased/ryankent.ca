@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Alert from "./Alert.svelte";
+
   let success = false;
   let error = false;
   let email = '';
@@ -35,14 +37,14 @@
   <input type="email" name="email" aria-label="Email address" placeholder="your@email.com" required bind:value={email} />
   <textarea name="message" aria-label="Message" rows="4" required placeholder="Hi! I'm contacting you because..." bind:value={message}></textarea>
   {#if success}
-    <span class="alert success">
+    <Alert type="success">
       Thanks for submitting your message. I'll get back to you soon.
-    </span>
+    </Alert>
   {/if}
   {#if error}
-    <span class="alert error">
+    <Alert type="error">
       There was a problem sending your message. Please use a different method to contact me, or try again later.
-    </span>
+    </Alert>
   {/if}
   <button type="submit">Send</button>
 </form>

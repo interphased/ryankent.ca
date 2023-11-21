@@ -7,14 +7,12 @@
 
 <script lang="ts">
   import Time from '$lib/components/Time.svelte';
-  import SubHeader from '$lib/components/SubHeader.svelte'
+  import BlogHeader from '$lib/components/BlogHeader.svelte'
 
   export let data;
 </script>
 
-<SubHeader total={data.posts.length}>
-  Blog
-</SubHeader>
+<BlogHeader articleCount={data.posts.length} />
 
 {#if data.posts.length}
   {#each data.posts as post}

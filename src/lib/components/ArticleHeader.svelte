@@ -1,26 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import Time from '$lib/components/Time.svelte';
 
   export let date: string;
-
-  function calculateReadTime(article: string) {
-    const wpm = 220;
-    const words = article.trim().split(/\s+/).length;
-    const time = Math.ceil(words / wpm);
-
-    return time;
-  }
-
-  let readTime = 0;
-
-  onMount(() => {
-    let article = document.querySelector<HTMLElement>('.article-body');
-
-    if (article) {
-      readTime = calculateReadTime(article.innerText);
-    }
-  });
+  export let readTime: number;
 </script>
 
 <header class="article-header">
@@ -42,6 +24,11 @@
     margin: -2rem -2rem 2rem -2rem;
     padding: 2rem;
     border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .article-header :global(h1),
+  .article-header :global(h2) {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
   }
   .meta {
     display: flex;

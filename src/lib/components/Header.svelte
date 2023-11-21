@@ -9,14 +9,15 @@
       </span>
     </h1>
   </div>
+  <slot />
 </header>
 
 <style>
   header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     margin-bottom: 2rem;
   }

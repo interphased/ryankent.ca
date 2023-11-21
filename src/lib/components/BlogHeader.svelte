@@ -1,14 +1,14 @@
 <script lang="ts">
-  export let total: number;
+  export let articleCount: number;
 </script>
 
-<header class="subheader">
-  <h1><slot /></h1>
-  <p>Showing <strong>{total}</strong> Articles</p>
+<header class="blog-header">
+  <h1>Blog</h1>
+  <p>Showing <strong>{articleCount}</strong> Articles</p>
 </header>
 
 <style>
-  .subheader {
+  .blog-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,8 +16,8 @@
     margin-bottom: 2rem;
   }
 
-  .subheader > p,
-  .subheader > h1 {
+  .blog-header > p,
+  .blog-header > h1 {
     margin-bottom: 0;
   }
 </style>
