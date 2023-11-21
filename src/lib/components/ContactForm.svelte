@@ -46,3 +46,9 @@
   {/if}
   <button type="submit">Send</button>
 </form>
+
+<style>
+  form {
+    flex-grow: 1;
+  }
+</style>

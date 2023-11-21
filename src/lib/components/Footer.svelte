@@ -1,5 +1,4 @@
 <footer>
-  <slot />
   <nav>
     <div>
       <a href="/">Home</a>
@@ -19,8 +18,8 @@
   nav {
     margin-top: 2rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
