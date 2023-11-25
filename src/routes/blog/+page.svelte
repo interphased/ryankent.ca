@@ -6,8 +6,8 @@
 </svelte:head>
 
 <script lang="ts">
-  import Time from '$lib/components/Time.svelte';
   import BlogHeader from '$lib/components/BlogHeader.svelte'
+	import ArticleMeta from '$lib/components/ArticleMeta.svelte';
 
   export let data;
 </script>
@@ -21,7 +21,7 @@
         <h2>
           <a href="{post.path}">{post.metadata.title}</a>
         </h2>
-        <Time date={post.metadata.date} />
+        <ArticleMeta date={post.metadata.date} readTime={post.readTime} />
       </header>
       <p>{post.metadata.description}</p>
     </article>

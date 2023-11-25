@@ -1,37 +1,25 @@
 <svelte:head>
-  <title>Ryan Kent - {title}</title>
-  <meta name="description" content="{description}" />
-  <meta name="og:title" content="Ryan Kent - {title}"/>
-  <meta name="og:description" content="{description}" />
-  <meta name="keywords" content="{keywords.toString()}" />
+  <title>Ryan Kent - {post.metadata.title}</title>
+  <meta name="description" content="{post.metadata.description}" />
+  <meta name="og:title" content="Ryan Kent - {post.metadata.title}"/>
+  <meta name="og:description" content="{post.metadata.description}" />
+  <meta name="keywords" content="{post.metadata.keywords.toString()}" />
 </svelte:head>
 
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { calculate } from '$lib/utils/readTime.js';
   import ArticleHeader from '$lib/components/ArticleHeader.svelte';
   import ArticleBody from '$lib/components/ArticleBody.svelte';
 
   export let data;
-  const { title, description, keywords, date, content: Content } = data;
-
-  let articleBody: HTMLElement;
-  let readTime = 0;
-
-  onMount(() => {
-    if (articleBody) {
-      readTime = calculate(articleBody.innerText);
-    }
-  });
+  const { post, component } = data;
 </script>
 
 <article>
-  <ArticleHeader {date} {readTime}>
-    {title}
+  <ArticleHeader date={post.metadata.date} readTime={post.readTime}>
+    {post.metadata.title}
   </ArticleHeader>
   <ArticleBody>
-    <div bind:this={articleBody}>
-      <svelte:component this={Content} />
-    </div>
+    <svelte:component this={component} />
+    <!-- {@html post.content} -->
   </ArticleBody>
 </article>

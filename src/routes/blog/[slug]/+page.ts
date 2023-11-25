@@ -1,14 +1,16 @@
-export async function load({ params }) {
-  const post = await import(`../../../lib/content/posts/${params.slug}.md`);
-  const { title, date, description, keywords, published } = post.metadata;
-  const content = post.default;
+import type { Post } from "$lib/utils/posts";
+
+export async function load({ params, fetch }) {
+  // mdsvex component must be rendered client-side
+  const postFile = await import(`../../../lib/content/posts/${params.slug}.md`);
+  const component = postFile.default;
+
+  // other post data can come from api
+  const response = await fetch(`/api/posts/${params.slug}`);
+  const post: Post = await response.json();
 
   return {
-    content,
-    title,
-    date,
-    description,
-    keywords,
-    published
-  };
+    post,
+    component
+  }
 }

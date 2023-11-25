@@ -1,5 +1,6 @@
 <script lang="ts">
   import Time from '$lib/components/Time.svelte';
+	import ArticleMeta from './ArticleMeta.svelte';
 
   export let date: string;
   export let readTime: number;
@@ -9,13 +10,7 @@
   <h1>
     <slot />
   </h1>
-  <div class="meta">
-    <Time {date} />
-    {#if readTime}
-      <span class="read-time">&middot;</span>
-      <span class="read-time">{readTime} min read</span>
-    {/if}
-  </div>
+  <ArticleMeta {date} {readTime} />
 </header>
 
 <style>
@@ -29,16 +24,5 @@
   .article-header :global(h2) {
     margin-top: 0;
     margin-bottom: 0.5rem;
-  }
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .read-time {
-    color: var(--time-color);
   }
 </style>

@@ -1,5 +1,9 @@
+import type { SvelteComponent } from "svelte"
+import { calculate } from "./readTime"
+
 export type Post = {
   path: string,
+  readTime: number,
   metadata: {
     title: string
     date: string
@@ -9,23 +13,38 @@ export type Post = {
   }
 }
 
-type MarkdownFiles = Record<string, () => Promise<Post>>
-
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('../content/posts/*.md') as MarkdownFiles;
+  const allPostFiles = import.meta.glob('../content/posts/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
 
   const allPosts: Post[] = await Promise.all(
     iterablePostFiles.map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-      const postPath = `/blog/${path.slice(17, -3)}`;
+      const post = await resolver() as SvelteComponent<Post["metadata"]>;
+      const content = post.default.render()
+      const postPath = `/blog/${path.split('/').pop()?.slice(0, -3)}`;
+      const readTime = calculate(content.html)
 
       return {
-        metadata: metadata,
-        path: postPath
+        metadata: post.metadata,
+        path: postPath,
+        readTime
       };
     })
   );
 
   return allPosts;
+};
+
+export const fetchMarkdownPost = async (slug: string) => {
+  const postFile: SvelteComponent<Post["metadata"]> = await import(`../content/posts/${slug}.md`);
+  const content = postFile.default.render();
+  const readTime = calculate(content.html);
+
+  const post: Post = {
+    path: `/blog/${slug}`,
+    readTime,
+    metadata: postFile.metadata
+  }
+
+  return post;
 };
