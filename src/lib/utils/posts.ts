@@ -36,12 +36,13 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchMarkdownPost = async (slug: string) => {
-  const postFile: SvelteComponent<Post["metadata"]> = await import(`../content/posts/${slug}.md`);
+  const trimmedSlug = slug.slice(0, -5);
+  const postFile: SvelteComponent<Post["metadata"]> = await import(`../content/posts/${trimmedSlug}.md`);
   const content = postFile.default.render();
   const readTime = calculate(content.html);
 
   const post: Post = {
-    path: `/blog/${slug}`,
+    path: `/blog/${trimmedSlug}`,
     readTime,
     metadata: postFile.metadata
   }

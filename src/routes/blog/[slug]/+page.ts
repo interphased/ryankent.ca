@@ -6,7 +6,7 @@ export async function load({ params, fetch }) {
   const component = postFile.default;
 
   // other post data can come from api
-  const response = await fetch(`/api/posts/${params.slug}`);
+  const response = await fetch(`/api/posts/${params.slug}.json`);
   const post: Post = await response.json();
 
   return {
