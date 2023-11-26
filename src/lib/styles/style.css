@@ -284,9 +284,10 @@ a:hover {
 }
 
 .card {
-	padding: 2rem;
-	border-radius: 0.5rem;
-	background: var(--article-header-bg-color);
+	box-shadow: 0 0 100px #0000001a;
+  background: var(--article-bg-color);
+  padding: 2rem;
+  border-radius: .5rem;
 }
 
 .flex-center {
