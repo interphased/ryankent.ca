@@ -3,6 +3,7 @@
   <meta name="description" content="Hi! I'm a web application developer from Toronto, Canada" />
   <meta name="og:title" content="Ryan Kent"/>
   <meta name="og:description" content="Hi! I'm a web application developer from Toronto, Canada" />
+  <link rel="canonical" href="https://ryankent.ca" />
 </svelte:head>
 
 <script>

@@ -4,6 +4,7 @@
   <meta name="og:title" content="Ryan Kent - {post.metadata.title}"/>
   <meta name="og:description" content="{post.metadata.description}" />
   <meta name="keywords" content="{post.metadata.keywords.toString()}" />
+  <link rel="canonical" href="https://ryankent.ca{post.path}" />
 </svelte:head>
 
 <script lang="ts">
