@@ -36,6 +36,11 @@
 {/if}
 
 <style>
+  .article-preview {
+    background: var(--blockquote-bg-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
   .article-preview header {
     margin-bottom: 1rem;
   }

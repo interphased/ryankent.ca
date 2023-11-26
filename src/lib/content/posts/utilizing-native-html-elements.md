@@ -108,7 +108,7 @@ Neat! Although, it does look pretty basic. But the beautiful thing is that this 
 
 #### Example
 
-<Disclosure2 />
+> <Disclosure2 />
 
 ## Open sesame
 
@@ -131,7 +131,7 @@ Absolutely!
 
 #### Example
 
-<Disclosure3 />
+> <Disclosure3 />
 
 ## External controls
 
@@ -238,7 +238,7 @@ This is where our disclosure component becomes a beautiful thing. Since it is al
 
 #### Example
 
-<Disclosure5 />
+> <Disclosure5 />
 
 Here, we use a couple attributes that our JS can hook into to make things work. The first is `data-intersect` which, when present, will tell our observer that this is an element it needs to watch. The second is `data-href` which we use to tell the observer what URL to fetch. The response is a simple HTML string, so we can swap it in using `el.innerHTML`.
 
@@ -311,7 +311,7 @@ const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
 
 #### Example
 
-<Disclosure6 />
+> <Disclosure6 />
 
 ## Accessibility
 

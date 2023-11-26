@@ -22,16 +22,21 @@
 </nav>
 
 <style>
+  nav {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
   .link {
     transition: opacity 150ms ease-in-out;
-    width: 50px;
-    height: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 100%;
   }
-
   .link > svg {
     width: 50%;
     fill: #fff;

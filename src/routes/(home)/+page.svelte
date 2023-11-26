@@ -41,4 +41,7 @@
     border-radius: 50%;
     margin-bottom: 2rem;
   }
+  footer {
+    margin-top: 3rem;
+  }
 </style>

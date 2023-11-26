@@ -15,10 +15,7 @@
 
 <style>
   .article-header {
-    background: var(--article-header-bg-color);
-    margin: -2rem -2rem 2rem -2rem;
-    padding: 2rem;
-    border-radius: 0.5rem 0.5rem 0 0;
+    margin: 3rem 0;
   }
   .article-header :global(h1),
   .article-header :global(h2) {

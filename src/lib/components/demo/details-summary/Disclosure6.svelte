@@ -43,7 +43,6 @@
     background: lavender;
     border-radius: 0.5rem;
     color: indigo;
-    margin-bottom: 2rem;
   }
 
   details > * {

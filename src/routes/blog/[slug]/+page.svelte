@@ -9,6 +9,7 @@
 <script lang="ts">
   import ArticleHeader from '$lib/components/ArticleHeader.svelte';
   import ArticleBody from '$lib/components/ArticleBody.svelte';
+	import Comments from '$lib/components/Comments.svelte';
 
   export let data;
   const { post, component } = data;
@@ -20,6 +21,7 @@
   </ArticleHeader>
   <ArticleBody>
     <svelte:component this={component} />
-    <!-- {@html post.content} -->
   </ArticleBody>
 </article>
+
+<Comments />
