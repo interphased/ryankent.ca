@@ -111,7 +111,7 @@ html {
 	--theme-button-icon-fill: #ffb300;
 	--theme-button-bg-color: rgba(0,0,0,0.05);
 	--card-bg-color: var(--article-bg-color);
-	--card-border-color: var(--well-bg-color);
+	--card-border-color: rgba(0,0,0,0.1);
 }
 
 html[data-theme='dark'] {
@@ -121,9 +121,10 @@ html[data-theme='dark'] {
 	--accent-color: #CDDC39;
 	--text-color: #c9c9c9;
 	--line-height: 2;
-	--button-bg-color: rgb(27, 30, 34);
-	--input-border-color: rgb(27, 30, 34);
-	--input-bg-color: rgb(27, 30, 34);
+	--button-bg-color: var(--accent-color);
+	--button-text-color: var(--bg-color);
+	--input-border-color: rgba(24, 27, 32, 0.6);
+	--input-bg-color: rgba(24, 27, 32, 0.6);
 	--input-text-color: #fff;
 	--input-placeholder-color: rgba(255,255,255,0.4);
 	--success-bg-color: #4f7b3473;
@@ -131,15 +132,15 @@ html[data-theme='dark'] {
 	--error-bg-color: #39060880;
 	--error-text-color: #dccecb;
 	--article-bg-color: #2d2c35;
-	--article-border-color: rgb(27, 30, 34);
+	--article-border-color: rgba(24, 27, 32, 0.6);
 	--time-color: rgba(255,255,255,0.6);
 	--code-bg-color: rgba(0,0,0,0.2);
-	--well-bg-color: rgba(255,255,255,0.05);
-	--blockquote-bg-color: rgba(255,255,255,0.05);
+	--well-bg-color: #3d3c4ac4;
+	--blockquote-bg-color: #3d3c4ac4;
 	--theme-button-icon-fill: #f0c35a;
-	--theme-button-bg-color: rgba(255,255,255,0.05);
+	--theme-button-bg-color: #3d3c4ac4;
 	--card-bg-color: var(--well-bg-color);
-	--card-border-color: transparent;
+	--card-border-color: rgba(0,0,0,0.1);
 }
 
 html {
@@ -173,7 +174,7 @@ h1 {
 
 h1 > span {
 	border-bottom: 2px solid var(--accent-color);
-	padding-bottom: 0.2rem;
+	padding-bottom: 0.3rem;
 	white-space: nowrap;
 }
 
@@ -276,7 +277,7 @@ button,
 	font-weight: 600;
 	font-size: 1rem;
 	border-radius: 0.5rem;
-	padding: 0.6rem 2rem;
+	padding: 0.3rem 2rem;
 }
 
 button:hover {
@@ -321,7 +322,7 @@ a:hover {
 
 .card {
 	position: relative;
-	box-shadow: 0 0 0.5rem #0000001a;
+	/* box-shadow: 0 0 0.5rem #0000001a; */
 	background: var(--card-bg-color);
 	padding: 2rem;
 	border-radius: .5rem;

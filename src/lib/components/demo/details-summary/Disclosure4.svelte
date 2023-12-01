@@ -7,14 +7,13 @@
 </button>
 
 <details bind:open={open}>
-  <summary>A disclosure which can be controled by a separate button</summary>
+  <summary>A disclosure which can be controlled by a separate button</summary>
   <article>The content, which may or may not be revealed because it is determined by the state of the open attribute.</article>
 </details>
 
 <style>
   button {
     margin-bottom: 1rem;
-    border: 1px solid #fff;
   }
 
   details {

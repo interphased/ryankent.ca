@@ -12,14 +12,16 @@
 </script>
 
 <header>
-  <img src="/profile.jpg" alt="profile" />
-  <h1>Hi, my name is <span>Ryan Kent</span></h1>
+  <div class="profile">
+    <img src="/profile.jpg" alt="profile" />
+    <h1>Hi, my name is <span>Ryan Kent</span></h1>
+  </div>
   <h3>I'm a web application developer specializing in performant, intuitive, user-focused applications and interfaces.</h3>
   <p>I currently live in Toronto, Canada, and work passionately on all the interesting products at <a href="https://vidcruiter.com" target="_blank">VidCruiter</a>.</p>
   <p>I have been in cyberspace for a long time. In 2008 I started <a href="https://interphased.com" target="_blank">Interphased</a> and put my heart into all the work we did there for over a decade. We made lots of cool products and applications for clients all across the world.</p>
 </header>
 
-<section class="well">
+<section class="card">
   <h4>Read more</h4>
   <p>Sometimes I write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
 </section>
@@ -36,11 +38,18 @@
 </footer>
 
 <style>
+  .profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
   img {
-    width: 12rem;
-    height: 12rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
   footer {
     text-align: center;
@@ -48,11 +57,18 @@
   }
   h1 {
     font-size: 3rem;
+    margin-bottom: 0;;
   }
   .well {
     margin-top: 2rem;
   }
   .card {
     margin-top: 3rem;
+  }
+  @media screen and (max-width: 40rem) {
+    .profile {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 </style>
