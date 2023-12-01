@@ -26,12 +26,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 1rem;
-    top: 1rem;
+    right: 2rem;
+    top: 2rem;
     width: 2.5rem;
     height: 2.5rem;
     padding: 0;
     fill: var(--theme-button-icon-fill);
     background: var(--theme-button-bg-color);
+  }
+  @media screen and (max-width: 40rem) {
+    button {
+      top: 1rem;
+      right: 1rem;
+    }
   }
 </style>

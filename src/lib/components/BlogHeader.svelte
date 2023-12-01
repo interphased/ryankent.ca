@@ -3,7 +3,7 @@
 </script>
 
 <header class="blog-header">
-  <h1>Blog</h1>
+  <h2>Articles</h2>
   <p>Showing <strong>{articleCount}</strong> Articles</p>
 </header>
 
@@ -17,7 +17,8 @@
   }
 
   .blog-header > p,
-  .blog-header > h1 {
+  .blog-header > h2 {
     margin-bottom: 0;
+    font-family: var(--font-sans);
   }
 </style>

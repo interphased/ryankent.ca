@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Post } from '$lib/utils/posts';
-	import ArticleMeta from './ArticleMeta.svelte';
+  import type { Post } from '$lib/utils/posts';
+  import ArticleMeta from './ArticleMeta.svelte';
 
   export let post: Post;
 </script>
@@ -17,6 +17,10 @@
 
 <style>
   .article-preview header {
+    margin-bottom: 1rem;
+  }
+  .article-preview header h2 {
+    font-family: var(--font-sans);
     margin-bottom: 1rem;
   }
 </style>

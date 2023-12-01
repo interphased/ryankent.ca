@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Time from "./Time.svelte";
+  import Time from "./Time.svelte";
 
   export let date: string;
   export let readTime: number;

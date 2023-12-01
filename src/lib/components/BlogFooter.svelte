@@ -3,7 +3,7 @@
   import Social from '$lib/components/Social.svelte';
 </script>
 
-<footer class="blog-footer">
+<footer class="blog-footer card">
   <div>
     <h4>About Me</h4>
     <p>My name is Ryan Kent. I'm a web application developer from Toronto, Canada. I specialize in performant, intuitive, user-focused applications and interfaces.</p>

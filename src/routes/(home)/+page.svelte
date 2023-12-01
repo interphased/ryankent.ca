@@ -24,7 +24,7 @@
   <p>Sometimes I write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
 </section>
 
-<section>
+<section class="card">
   <h4><strong>Send me a message</strong></h4>
   <p>Feel free to contact me for any personal or business request.</p>
   <ContactForm />
@@ -37,12 +37,22 @@
 
 <style>
   img {
-    width: 180px;
-    height: 180px;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   footer {
+    text-align: center;
     margin-top: 3rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .card {
+    margin-top: 3rem;
+  }
+  .card > h4 {
+    margin-top: 0;
   }
 </style>

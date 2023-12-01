@@ -1,6 +1,5 @@
 <script lang="ts">
-  import Time from '$lib/components/Time.svelte';
-	import ArticleMeta from './ArticleMeta.svelte';
+  import ArticleMeta from './ArticleMeta.svelte';
 
   export let date: string;
   export let readTime: number;
@@ -15,14 +14,18 @@
 
 <style>
   .article-header {
-    margin: 3rem 0;
-    background: var(--article-header-bg-color);
-    padding: 2rem;
-    border-radius: 0.5rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
   }
   .article-header :global(h1),
   .article-header :global(h2) {
     margin-top: 0;
     margin-bottom: 0.5rem;
+  }
+  @media screen and (max-width: 40rem) {
+    .article-header {
+      margin: 0;
+      padding: 1rem 0 2rem 0;
+    }
   }
 </style>

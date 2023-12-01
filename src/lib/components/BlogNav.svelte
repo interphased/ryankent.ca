@@ -6,9 +6,6 @@
 </nav>
 
 <style>
-  .read-more {
-    margin-top: 1rem;
-  }
   .read-more a {
     text-decoration: none;
     display: inline-flex;

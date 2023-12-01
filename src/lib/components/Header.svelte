@@ -5,7 +5,7 @@
     </a>
     <h1>
       <span>
-        <a href="/">Ryan Kent</a>
+        <a href="/blog">Ryan Kent</a>
       </span>
     </h1>
   </div>
@@ -15,9 +15,9 @@
 <style>
   header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
   }
@@ -31,12 +31,13 @@
   }
 
   img {
-    width: 4rem;
-    height: 4rem;
+    width: 2.6rem;
+    height: 2.6rem;
     border-radius: 50%;
   }
 
   h1 {
+    font-size: 1.8rem;
     margin-bottom: 0;
     margin-top: -0.6rem;
   }

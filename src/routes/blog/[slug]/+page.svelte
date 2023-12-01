@@ -10,7 +10,8 @@
 <script lang="ts">
   import ArticleHeader from '$lib/components/ArticleHeader.svelte';
   import ArticleBody from '$lib/components/ArticleBody.svelte';
-	import Comments from '$lib/components/Comments.svelte';
+  import Comments from '$lib/components/Comments.svelte';
+  import BlogNav from '$lib/components/BlogNav.svelte';
 
   export let data;
   const { post, component } = data;
@@ -23,6 +24,7 @@
   <ArticleBody>
     <svelte:component this={component} />
   </ArticleBody>
+  <BlogNav />
 </article>
 
 <Comments />

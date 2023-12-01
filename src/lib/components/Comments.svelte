@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { theme } from "$lib/stores/theme";
 
   let ready = false;
@@ -27,7 +27,7 @@
 
 <style>
   article {
-    margin: 6rem 0 2rem 0;
+    margin: 4rem 0 2rem 0;
   }
   article > h4 {
     margin-top: 0;

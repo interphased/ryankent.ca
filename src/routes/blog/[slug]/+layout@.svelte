@@ -2,15 +2,12 @@
   import '$lib/styles/prism.css';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-	import BlogFooter from '$lib/components/BlogFooter.svelte';
-	import BlogNav from '$lib/components/BlogNav.svelte';
+  import BlogFooter from '$lib/components/BlogFooter.svelte';
 </script>
 
 <div class="flex-center">
   <div>
-    <Header>
-      <BlogNav />
-    </Header>
+    <Header />
     <main class="container">
       <slot />
       <BlogFooter />

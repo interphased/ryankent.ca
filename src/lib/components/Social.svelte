@@ -47,7 +47,7 @@
   }
 
   .github {
-    background-color: rgb(36, 41, 47);
+    background-color: rgb(27, 30, 34);
   }
 
   .email {

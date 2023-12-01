@@ -1,5 +1,5 @@
 <div class="home">
-  <main class="container">
+  <main class="container container-sm">
     <slot />
   </main>
 </div>
