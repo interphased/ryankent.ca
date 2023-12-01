@@ -19,13 +19,13 @@
   <p>I have been in cyberspace for a long time. In 2008 I started <a href="https://interphased.com" target="_blank">Interphased</a> and put my heart into all the work we did there for over a decade. We made lots of cool products and applications for clients all across the world.</p>
 </header>
 
-<section>
-  <h4><strong>Read more</strong></h4>
+<section class="well">
+  <h4>Read more</h4>
   <p>Sometimes I write about the web and stuff. If you're reading this, maybe you should <a href="/blog">check out my blog</a>.</p>
 </section>
 
 <section class="card">
-  <h4><strong>Send me a message</strong></h4>
+  <h4>Send me a message</h4>
   <p>Feel free to contact me for any personal or business request.</p>
   <ContactForm />
 </section>
@@ -49,10 +49,10 @@
   h1 {
     font-size: 3rem;
   }
+  .well {
+    margin-top: 2rem;
+  }
   .card {
     margin-top: 3rem;
-  }
-  .card > h4 {
-    margin-top: 0;
   }
 </style>

@@ -106,12 +106,12 @@ html {
 	--article-bg-color: #fff;
 	--article-border-color: var(--input-border-color);
 	--time-color: rgba(0,0,0,0.5);
-	--article-header-bg-color: rgba(0,0,0,0.05);
+	--well-bg-color: rgba(0,0,0,0.05);
 	--blockquote-bg-color: rgba(0,0,0,0.05);
 	--theme-button-icon-fill: #ffb300;
 	--theme-button-bg-color: rgba(0,0,0,0.05);
 	--card-bg-color: var(--article-bg-color);
-	--card-border-color: var(--article-header-bg-color);
+	--card-border-color: var(--well-bg-color);
 }
 
 html[data-theme='dark'] {
@@ -134,11 +134,11 @@ html[data-theme='dark'] {
 	--article-border-color: rgb(27, 30, 34);
 	--time-color: rgba(255,255,255,0.6);
 	--code-bg-color: rgba(0,0,0,0.2);
-	--article-header-bg-color: rgba(255,255,255,0.05);
+	--well-bg-color: rgba(255,255,255,0.05);
 	--blockquote-bg-color: rgba(255,255,255,0.05);
 	--theme-button-icon-fill: #f0c35a;
 	--theme-button-bg-color: rgba(255,255,255,0.05);
-	--card-bg-color: var(--article-header-bg-color);
+	--card-bg-color: var(--well-bg-color);
 	--card-border-color: transparent;
 }
 
@@ -201,7 +201,7 @@ h4 {
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin: 2rem 0 1rem 0;
-	font-weight: 300;
+	font-weight: 800;
 	line-height: calc(var(--heading-line-height) * 1.2);
 }
 
@@ -322,24 +322,50 @@ a:hover {
 .card {
 	position: relative;
 	box-shadow: 0 0 0.5rem #0000001a;
-  background: var(--card-bg-color);
-  padding: 2rem;
-  border-radius: .5rem;
+	background: var(--card-bg-color);
+	padding: 2rem;
+	border-radius: .5rem;
 	border-top: 0.2rem solid var(--accent-color);
+}
+
+.card > h1:first-child,
+.card > h2:first-child,
+.card > h3:first-child,
+.card > h4:first-child {
+	margin-top: 0;
+}
+.card > *:last-child {
+	margin-bottom: 0;
 }
 
 .card::after {
 	content: '';
-  position: absolute;
-  background-image: linear-gradient(transparent, var(--card-border-color));
-  padding: 1px 2px;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: -2px;
-  z-index: -1;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+	position: absolute;
+	background-image: linear-gradient(transparent, var(--card-border-color));
+	padding: 1px 2px;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -2px;
+	z-index: -1;
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+.well {
+	background: var(--well-bg-color);
+	padding: 2rem;
+	border-radius: 0.5rem;
+}
+
+.well > h1:first-child,
+.well > h2:first-child,
+.well > h3:first-child,
+.well > h4:first-child {
+	margin-top: 0;
+}
+.well > *:last-child {
+	margin-bottom: 0;
 }
 
 .flex-center {
