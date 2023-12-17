@@ -8,9 +8,10 @@
 	}
 	:global(.article-body > p:first-child::first-letter) {
 		font-size: 5rem;
+		line-height: 3rem;
 		float: left;
 		margin-top: 0;
-		margin-right: 0.1rem;
+		margin-right: 0.2rem;
 		font-family: var(--font-serif);
 	}
 	.article-body :global(h2) {
