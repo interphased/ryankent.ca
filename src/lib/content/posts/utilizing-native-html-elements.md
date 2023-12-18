@@ -1,5 +1,5 @@
 ---
-title: "Utilizing Native HTML Elements"
+title: 'Utilizing Native HTML Elements'
 date: 2023-11-13T12:00:00.000Z
 description: There are quite a lot of native HTML elements we can use to enhance our components to give them the most support and features "out of the box." In this article we are going to dive into the native HTML disclosure elements to build an accordion component, learn how to use and extend it, all with vanilla JS and optionally some other popular JS frameworks.
 keywords:
@@ -42,14 +42,14 @@ Let's say we want to have a panel with a title, and that when clicked it will op
 
 Feast your eyes on the `<details>` and `<summary>` elements.
 
-The details element creates a disclosure widget with a triangle arrow on the left side to indicate the status of if the widget is open or closed. Upon pressing the summary, the widget will open to reveal the contents within. 
+The details element creates a disclosure widget with a triangle arrow on the left side to indicate the status of if the widget is open or closed. Upon pressing the summary, the widget will open to reveal the contents within.
 
 #### HTML
 
 ```html
 <details>
-  <summary>A summary used as a label for the content.</summary>
-  The content, tucked away until the user performs an action to display it.
+	<summary>A summary used as a label for the content.</summary>
+	The content, tucked away until the user performs an action to display it.
 </details>
 ```
 
@@ -67,42 +67,40 @@ Neat! Although, it does look pretty basic. But the beautiful thing is that this 
 
 ```html
 <details>
-  <summary>A stylized summary used as a label for the content.</summary>
-  <article>
-    The content, tucked away until the user performs an action to display it.
-  </article>
+	<summary>A stylized summary used as a label for the content.</summary>
+	<article>The content, tucked away until the user performs an action to display it.</article>
 </details>
 
 <style>
-  details {
-    background: lavender;
-    border-radius: 0.5rem;
-    color: indigo;
-    margin-bottom: 1rem;
-  }
+	details {
+		background: lavender;
+		border-radius: 0.5rem;
+		color: indigo;
+		margin-bottom: 1rem;
+	}
 
-  details > * {
-    padding: 1rem;
-  }
+	details > * {
+		padding: 1rem;
+	}
 
-  summary {
-    background: rebeccapurple;
-    border-radius: 0.5rem;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    list-style: none;
-    transition-duration: 100ms;
-  }
+	summary {
+		background: rebeccapurple;
+		border-radius: 0.5rem;
+		color: white;
+		cursor: pointer;
+		font-weight: bold;
+		list-style: none;
+		transition-duration: 100ms;
+	}
 
-  summary:hover {
-    opacity: 0.9;
-  }
+	summary:hover {
+		opacity: 0.9;
+	}
 
-  details[open] > summary {
-    border-radius: 0.5rem 0.5rem 0 0;
-    opacity: 0.9;
-  }
+	details[open] > summary {
+		border-radius: 0.5rem 0.5rem 0 0;
+		opacity: 0.9;
+	}
 </style>
 ```
 
@@ -122,10 +120,8 @@ Absolutely!
 
 ```html
 <details open>
-  <summary>An open disclosure.</summary>
-  <article>
-    The content, already revealed because details has the open attribute.
-  </article>
+	<summary>An open disclosure.</summary>
+	<article>The content, already revealed because details has the open attribute.</article>
 </details>
 ```
 
@@ -140,22 +136,21 @@ Now that we know about the `open` attribute, we can assume it will keep track of
 #### HTML
 
 ```html
-<button onclick="toggleDetails()">
-  Toggle the disclosure open/closed
-</button>
+<button onclick="toggleDetails()">Toggle the disclosure open/closed</button>
 
 <details id="toggle-details">
-  <summary>A disclosure which can be controlled by a separate button</summary>
-  <article>
-    The content, which may or may not be revealed because it is determined by the state of the open attribute.
-  </article>
+	<summary>A disclosure which can be controlled by a separate button</summary>
+	<article>
+		The content, which may or may not be revealed because it is determined by the state of the open
+		attribute.
+	</article>
 </details>
 
 <script>
-  function toggleDetails() {
-    details = document.getElementById("toggle-details");
-    details.toggleAttribute("open");
-  }
+	function toggleDetails() {
+		details = document.getElementById('toggle-details');
+		details.toggleAttribute('open');
+	}
 </script>
 ```
 
@@ -171,21 +166,25 @@ If you use a JS framework like [Svelte](https://svelte.dev/), it's even easier. 
 
 ```svelte
 <script>
-  // Create a reactive boolean variable
-  let open = false;
+	// Create a reactive boolean variable
+	let open = false;
 </script>
 
 <!-- When clicking the button, set the variable to its opposite value -->
-<button on:click={() => { open = !open }}>
-  Toggle the disclosure open/closed
+<button
+	on:click={() => {
+		open = !open;
+	}}>
+	Toggle the disclosure open/closed
 </button>
 
 <!-- Bind the variable so the `open` prop only appears when true -->
-<details bind:open={open}>
-  <summary>A summary used as a label for the content.</summary>
-  <article>
-    The content, which may or may not be revealed because it is determined by the state of the open attribute.
-  </article>
+<details bind:open>
+	<summary>A summary used as a label for the content.</summary>
+	<article>
+		The content, which may or may not be revealed because it is determined by the state of the open
+		attribute.
+	</article>
 </details>
 ```
 
@@ -201,38 +200,39 @@ This is where our disclosure component becomes a beautiful thing. Since it is al
 
 ```html
 <details>
-  <summary>Fetch the external HTML content when it is revealed.</summary>
-  <article data-intersect data-href="/content-to-fetch">
-    <!-- This content will be replaced, so we can leave a loading message -->
-    Loading...
-  </article>
+	<summary>Fetch the external HTML content when it is revealed.</summary>
+	<article data-intersect data-href="/content-to-fetch">
+		<!-- This content will be replaced, so we can leave a loading message -->
+		Loading...
+	</article>
 </details>
 
 <script>
-  const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
-    .then((response) => response.text())
-    .then((text) => {
-      el.innerHTML = text;
-    });
+	const swapInnerHtmlWithResponse = (el) =>
+		fetch(el.dataset.href)
+			.then((response) => response.text())
+			.then((text) => {
+				el.innerHTML = text;
+			});
 
-  const handleVisibilityChanged = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0) {
-        swapInnerHtmlWithResponse(entry.target);
-      }
-    });
-  }
+	const handleVisibilityChanged = (entries) => {
+		entries.forEach((entry) => {
+			if (entry.intersectionRatio > 0) {
+				swapInnerHtmlWithResponse(entry.target);
+			}
+		});
+	};
 
-  let options = {
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
+	let options = {
+		rootMargin: '0px',
+		threshold: 1.0
+	};
 
-  const visibilityObserver = new IntersectionObserver(handleVisibilityChanged, options);
+	const visibilityObserver = new IntersectionObserver(handleVisibilityChanged, options);
 
-  const element = document.querySelector("[data-intersect]");
+	const element = document.querySelector('[data-intersect]');
 
-  visibilityObserver.observe(element);
+	visibilityObserver.observe(element);
 </script>
 ```
 
@@ -250,10 +250,8 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external HTML content when it is revealed</summary>
-  <article hx-get="/content-to-fetch" hx-trigger="intersect">
-    Loading...
-  </article>
+	<summary>Fetch the external HTML content when it is revealed</summary>
+	<article hx-get="/content-to-fetch" hx-trigger="intersect">Loading...</article>
 </details>
 ```
 
@@ -261,10 +259,8 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external HTML content when it is revealed</summary>
-  <turbo-frame id="content" src="/content-to-fetch" loading="lazy">
-    Loading...
-  </turbo-frame>
+	<summary>Fetch the external HTML content when it is revealed</summary>
+	<turbo-frame id="content" src="/content-to-fetch" loading="lazy"> Loading... </turbo-frame>
 </details>
 ```
 
@@ -272,9 +268,9 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
 
 ```html
 <details>
-  <summary>Fetch the external HTML content when it is revealed</summary>
-  <article
-    x-data="{
+	<summary>Fetch the external HTML content when it is revealed</summary>
+	<article
+		x-data="{
       swapInnerHtmlWithResponse() {
         fetch('/content-to-fetch')
           .then((response) => response.text())
@@ -283,8 +279,7 @@ Admittedly, this approach is a lot easier using a library like [HTMX](https://ht
           });
       }
     }"
-    x-intersect:enter="swapInnerHtmlWithResponse()">
-  </article>
+		x-intersect:enter="swapInnerHtmlWithResponse()"></article>
 </details>
 ```
 
@@ -302,11 +297,12 @@ With the current state of web development you never know. It seems we've come fu
 //   content: 'The returned JSON content! Check your network monitor.'
 // }
 
-const swapInnerHtmlWithResponse = (el) => fetch(el.dataset.href)
-  .then((response) => response.json())
-  .then((data) => {
-    el.innerHTML = data.content;
-  });
+const swapInnerHtmlWithResponse = (el) =>
+	fetch(el.dataset.href)
+		.then((response) => response.json())
+		.then((data) => {
+			el.innerHTML = data.content;
+		});
 ```
 
 #### Example

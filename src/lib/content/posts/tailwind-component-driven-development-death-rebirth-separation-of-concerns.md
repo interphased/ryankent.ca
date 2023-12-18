@@ -1,7 +1,7 @@
 ---
-title: "Tailwind, component-driven-development, and the death and rebirth of the separation of concerns"
+title: 'Tailwind, component-driven development, and the death and rebirth of the separation of concerns'
 date: 2023-12-17T12:00:00.000Z
-description: "The separation of concerns is a longstanding, tried-and-true design principle in software development. When it comes to the web, the classic separation of concerns is HTML, CSS, and JS. But this has become a tiring, cumbersome, and fragile system to work with. I argue that the traditional separation of concerns on the web has died and been reborn with a new vision for what a \"concern\" even is."
+description: 'The separation of concerns is a longstanding, tried-and-true design principle in software development. When it comes to the web, the classic separation of concerns is HTML, CSS, and JS. But this has become a tiring, cumbersome, and fragile system to work with. I argue that the traditional separation of concerns on the web has died and been reborn with a new vision for what a "concern" even is.'
 keywords:
   - HTML
   - CSS
@@ -13,12 +13,11 @@ keywords:
 published: true
 ---
 
-The separation of concerns is a longstanding, tried-and-true design principle in software development. Wikipedia defines it as *"separating a computer program into distinct sections. Each section addresses a separate concern, a set of information that affects the code of a computer program."* It makes a lot of sense, we should separate each of the concerns so they can be developed in the same "scope" and not bleed over functionality from one to the other.
+The separation of concerns is a longstanding, tried-and-true design principle in software development. Wikipedia defines it as _"separating a computer program into distinct sections. Each section addresses a separate concern, a set of information that affects the code of a computer program."_ It makes a lot of sense, we should separate each of the concerns so they can be developed in the same "scope" and not bleed over functionality from one to the other.
 
 When it comes to the web, the classic separation of concerns is an easy one to make. We have 3 distinct languages: HTML, CSS, and JS. Each of them covers a role in the development of the web; be it content, presentation, or behaviour. From early on, and for a long time, this has been the way we have developed websites and applications.
 
 But this has become a tiring, cumbersome, and fragile system to work with. I argue that the traditional separation of concerns on the web has died and been reborn with a new vision for what a "concern" even is.
-
 
 ## First, a brief history lesson
 
@@ -50,8 +49,7 @@ For each feature you write you need to do work in 3 or more different places, ea
 
 If you're in an unfamiliar codebase or on a team it can also be very dangerous to update code if you're not sure where else it affects. There are a few things that can happen from this. First, is that it can lead to a lot of time wasted looking things up and testing to make sure nothing else breaks. Alternatively, if the developer doesn't want to look it up, they may inline a bunch of code which shouldn't be inline because it breaks the project's existing "separation of concerns." It also leaves a lot of fragmented, dead-end code, as it's easier and safer to leave something in if you're not sure what it affects than remove it to tidy things up.
 
-So, the existing definition of the separation of concerns for web development has some flaws. But we've seen a bit of a revolution in this space over the last few years with component-driven-development, which I'll get to in a moment. But first... Why would we want to use something like Tailwind anyway?
-
+So, the existing definition of the separation of concerns for web development has some flaws. But we've seen a bit of a revolution in this space over the last few years with component-driven development, which I'll get to in a moment. But first... Why would we want to use something like Tailwind anyway?
 
 ## Introducing Tailwind
 
@@ -60,17 +58,13 @@ Here's a quick code example of an alert component using Tailwind classes.
 Instead of writing code like this:
 
 ```html
-<div class="alert" style="margin-top: 8px; margin-bottom: 16px;">
-	Alert!
-</div>
+<div class="alert" style="margin-top: 8px; margin-bottom: 16px;">Alert!</div>
 ```
 
 We can do it... sort of the same, but more maintainable.
 
 ```html
-<div class="mt-2 mb-4 p-2 bg-red-50 text-red-800 rounded">
-	Alert!
-</div>
+<div class="mt-2 mb-4 p-2 bg-red-50 text-red-800 rounded">Alert!</div>
 ```
 
 It doesn't look so different. But there's actually a lot going on. In this case, all the colours, the margin and padding sizes, and the border-radius, all inherit their properties from a theme. The theme is completely configurable, and if changes are made there, it updates the style everywhere.
@@ -81,28 +75,27 @@ Well, that's no problem. We can simply adjust them in the theme config and it's 
 
 ```js
 module.exports = {
-  theme: {
+	theme: {
 		colors: {
 			...colors,
-			red: '#ff0000',
+			red: '#ff0000'
 		},
 		borderRadius: {
-			DEFAULT: '2px',
+			DEFAULT: '2px'
 		}
 	}
-}		
+};
 ```
 
 Because of Tailwind's utility-class-driven design, we don't need to find and replace values all over the codebase. Worst case scenario, the colours and values are hard-coded inline styles as well as hard-coded in stylesheets, and it's a nightmare to update.
 
 Best case scenario, if your CSS/SASS files are well-organized and use variables, the changes wouldn't be too bad to make, but I find that's often not the case unless you have a well-oiled development team.
 
-
 ## Component-driven development and the rise of SFCs
 
-Typically when working on new features we have to consider the whole picture, the entire user story, and often the full-stack. There may be requirements for how something looks, works, and behaves. There may even be back-end or database requirements. For now, though, let's stick with the front-end. 
+Typically when working on new features we have to consider the whole picture, the entire user story, and often the full-stack. There may be requirements for how something looks, works, and behaves. There may even be back-end or database requirements. For now, though, let's stick with the front-end.
 
-To work on something like this effectively, it would make a lot of sense to work on each piece of them together. They can't really exist on their own, so why separate them? This is the beauty of *Single File Components* (SFCs).
+To work on something like this effectively, it would make a lot of sense to work on each piece of them together. They can't really exist on their own, so why separate them? This is the beauty of _Single File Components_ (SFCs).
 
 We don't need to context shift when developing features anymore, we can just write them all in one place.
 
@@ -112,30 +105,30 @@ Components, with Tailwind, can have their content, presentation, and behaviours,
 
 ```svelte
 <script lang="ts">
-  export let type: 'success' | 'error';
+	export let type: 'success' | 'error';
 </script>
 
 <div
 	class="mt-2 mb-4 p-2 bg-red-50 text-red-800 rounded custom-class"
-  class:error={type === 'error'}
-  class:success={type === 'success'}>
+	class:error={type === 'error'}
+	class:success={type === 'success'}>
 	<slot />
 </div>
 
 <style>
 	/* if needed, we can do custom CSS too */
-	.custom-class {}
+	.custom-class {
+	}
 </style>
 ```
 
-Now when working on something we don't need to context shift into 3 different files. We don't need to worry if our styles bleed into other unwanted places, or if our behaviours do the same too because they don't exist outside of the SFC. 
+Now when working on something we don't need to context shift into 3 different files. We don't need to worry if our styles bleed into other unwanted places, or if our behaviours do the same too because they don't exist outside of the SFC.
 
 **We also don't need a bunch of query selectors, custom classes or data-attributes, just to locate an element in the DOM 3 different ways to work with it.**
 
 Better yet, when coming back to this in a year, we can work safer knowing we won't break anything unintended. Everything about this feature is packaged together nicely.
 
 There's also something to be said about how this makes copying code from one project to another straightforward. We don't need to maintain big repositories of components that have seemingly unending requirements. We can just copy them over and make some minimal changes without issue. With Tailwind, we know it will work, and it will look more or less the same as the source, albeit some modifications would be applied automatically if the theme configs are different.
-
 
 ## Working with an existing back-end
 
@@ -173,7 +166,6 @@ If you have a back-end that uses GraphQL, then that works great. It can often co
 
 Of course, the server and database need to be updated sometimes too, but at least using graph queries we don't need to create or modify REST endpoints to support trivial modifications. If we were working on something that, for example, now needs to support pagination... It's straightforward to update the query to fetch the data your component needs to build the feature.
 
-
 ## What about monolith applications
 
 If we're talking about something like a [Ruby on Rails](https://rubyonrails.org/) or [Laravel](https://laravel.com/) application, this separation can still be applicable. It's not limited to only Javascript frameworks. For example, Rails has [View Components](https://viewcomponent.org/) (and [StimulusJS](https://stimulus.hotwired.dev/)). The components can be organized similarly so the content, presentation, and behaviour can be together. It has the benefit of already being server-rendered, too.
@@ -187,7 +179,6 @@ If we're talking about something like a [Ruby on Rails](https://rubyonrails.org/
     navbar.modules.css (optional, often unnecessary with Tailwind)
     navbar.rb
 ```
-
 
 ## How does this separation of concerns scale into the future?
 
@@ -229,7 +220,7 @@ pub async fn save_favorites(
     let pool = get_pool()?;
 
     let query = "
-        INSERT INTO COOKIES 
+        INSERT INTO COOKIES
         (favorite_cookie_type, favorite_color)
         VALUES ($1, $2)
     ";
@@ -239,7 +230,7 @@ pub async fn save_favorites(
         .bind(favorite_color)
         .execute(&pool)
         .await
-        .map_err(|e| 
+        .map_err(|e|
             ServerFnError::ServerError(e.to_string())?;
 
     Ok(format!("Here, have some {favorite_color} {favorite_cookie_type} cookies!"))
@@ -249,7 +240,7 @@ pub async fn save_favorites(
 pub fn FavoritesForm() -> impl IntoView {
     let favorites = create_server_action::<SaveFavorites>();
     let value = favorites.value();
-    view! { 
+    view! {
         <ActionForm action=favorites>
             <label>
                 "Favorite type of cookie"
@@ -278,7 +269,6 @@ pub fn FavoritesForm() -> impl IntoView {
 ```
 
 Other developers have also been switching back to server-based languages (Go, Rust, Ruby, PHP, etc.) and having responses contain pure HTML or HTML fragments instead of JSON, and a driving factor for that is keeping all the logic for a particular concern together. Then, the "SPA-feel" can be added back in with a sprinkle of [HTMX](https://htmx.org/) or [Hotwire: Turbo](https://turbo.hotwired.dev/).
-
 
 ## So.. What now?
 

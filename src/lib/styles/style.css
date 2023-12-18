@@ -1,16 +1,84 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -18,9 +86,10 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 button,
-input[type="submit"],
-input[type="reset"] {
+input[type='submit'],
+input[type='reset'] {
 	background: none;
 	color: inherit;
 	border: none;
@@ -35,24 +104,27 @@ input[type="reset"] {
 /* END RESET */
 
 @font-face {
-	font-family: "Inter";
-	src: local('Inter Regular'), url("/fonts/Inter-Regular.woff2") format("woff2"), url("/fonts/Inter-Regular.woff") format("woff");
+	font-family: 'Inter';
+	src: local('Inter Regular'), url('/fonts/Inter-Regular.woff2') format('woff2'),
+		url('/fonts/Inter-Regular.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Inter";
-	src: local('Inter Medium'), url("/fonts/Inter-Medium.woff2") format("woff2"), url("/fonts/Inter-Medium.woff") format("woff");
+	font-family: 'Inter';
+	src: local('Inter Medium'), url('/fonts/Inter-Medium.woff2') format('woff2'),
+		url('/fonts/Inter-Medium.woff') format('woff');
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Inter";
-	src: local('Inter Bold'), url("/fonts/Inter-Bold.woff2") format("woff2"), url("/fonts/Inter-Bold.woff") format("woff");
+	font-family: 'Inter';
+	src: local('Inter Bold'), url('/fonts/Inter-Bold.woff2') format('woff2'),
+		url('/fonts/Inter-Bold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -61,26 +133,28 @@ input[type="reset"] {
 @font-face {
 	font-family: 'Lora';
 	src: local('Lora Italic'),
-			 url('/fonts/lora-italic-variablefont_wght-webfont.woff2') format('woff2'),
-			 url('/fonts/lora-italic-variablefont_wght-webfont.woff') format('woff');
+		url('/fonts/lora-italic-variablefont_wght-webfont.woff2') format('woff2'),
+		url('/fonts/lora-italic-variablefont_wght-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
 	font-family: 'Lora';
-	src: local('Lora Regular'),
-			 url('/fonts/lora-variablefont_wght-webfont.woff2') format('woff2'),
-			 url('/fonts/lora-variablefont_wght-webfont.woff') format('woff');
+	src: local('Lora Regular'), url('/fonts/lora-variablefont_wght-webfont.woff2') format('woff2'),
+		url('/fonts/lora-variablefont_wght-webfont.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
 
 :root {
 	color-scheme: light dark;
-	--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-serif: 'Lora', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	--font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-serif: 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+	--font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+		'Courier New', monospace;
 }
 
 html {
@@ -92,11 +166,11 @@ html {
 	--heading-line-height: 1.4;
 	--line-height: 2;
 	/* --code-bg-color: var(--bg-color); */
-	--code-bg-color: rgba(0,0,0,0.05);
+	--code-bg-color: rgba(0, 0, 0, 0.05);
 	--input-bg-color: #fff;
 	--input-text-color: #444;
 	--input-border-color: #dedede;
-	--input-placeholder-color: rgba(0,0,0,0.7);
+	--input-placeholder-color: rgba(0, 0, 0, 0.7);
 	--button-bg-color: rgb(36, 41, 47);
 	--button-text-color: #fff;
 	--success-bg-color: #d0e6c5;
@@ -105,20 +179,20 @@ html {
 	--error-text-color: #592c22;
 	--article-bg-color: #fff;
 	--article-border-color: var(--input-border-color);
-	--time-color: rgba(0,0,0,0.5);
-	--well-bg-color: rgba(0,0,0,0.05);
-	--blockquote-bg-color: rgba(0,0,0,0.05);
+	--time-color: rgba(0, 0, 0, 0.5);
+	--well-bg-color: rgba(0, 0, 0, 0.05);
+	--blockquote-bg-color: rgba(0, 0, 0, 0.05);
 	--theme-button-icon-fill: #ffb300;
-	--theme-button-bg-color: rgba(0,0,0,0.05);
+	--theme-button-bg-color: rgba(0, 0, 0, 0.05);
 	--card-bg-color: var(--article-bg-color);
-	--card-border-color: rgba(0,0,0,0.1);
+	--card-border-color: rgba(0, 0, 0, 0.1);
 }
 
 html[data-theme='dark'] {
 	--bg-color: #2d2c35;
 	--bg-gradient: linear-gradient(0deg, #363443, #2d2c35, #2d2c35);
 	--heading-color: #fafafa;
-	--accent-color: #CDDC39;
+	--accent-color: #cddc39;
 	--text-color: #c9c9c9;
 	--line-height: 2;
 	--button-bg-color: var(--accent-color);
@@ -126,21 +200,21 @@ html[data-theme='dark'] {
 	--input-border-color: rgba(24, 27, 32, 0.6);
 	--input-bg-color: rgba(24, 27, 32, 0.6);
 	--input-text-color: #fff;
-	--input-placeholder-color: rgba(255,255,255,0.4);
+	--input-placeholder-color: rgba(255, 255, 255, 0.4);
 	--success-bg-color: #4f7b3473;
 	--success-text-color: #c9ddbe;
 	--error-bg-color: #39060880;
 	--error-text-color: #dccecb;
 	--article-bg-color: #2d2c35;
 	--article-border-color: rgba(24, 27, 32, 0.6);
-	--time-color: rgba(255,255,255,0.6);
-	--code-bg-color: rgba(0,0,0,0.2);
+	--time-color: rgba(255, 255, 255, 0.6);
+	--code-bg-color: rgba(0, 0, 0, 0.2);
 	--well-bg-color: #3d3c4ac4;
 	--blockquote-bg-color: #3d3c4ac4;
 	--theme-button-icon-fill: #f0c35a;
 	--theme-button-bg-color: #3d3c4ac4;
 	--card-bg-color: var(--well-bg-color);
-	--card-border-color: rgba(0,0,0,0.1);
+	--card-border-color: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -172,7 +246,7 @@ h1 {
 	line-height: var(--heading-line-height);
 }
 
-h1 > span {
+h1>span {
 	border-bottom: 2px solid var(--accent-color);
 	padding-bottom: 0.3rem;
 	white-space: nowrap;
@@ -247,7 +321,8 @@ code {
 	border-radius: 0.2rem;
 }
 
-textarea, input {
+textarea,
+input {
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
@@ -258,10 +333,11 @@ textarea, input {
 	border-radius: 0.5rem;
 	margin-bottom: 0.5rem;
 	font-size: 1rem;
-	font-family: var(--font-sans)
+	font-family: var(--font-sans);
 }
 
-textarea::placeholder, input::placeholder {
+textarea::placeholder,
+input::placeholder {
 	color: var(--input-placeholder-color);
 }
 
@@ -325,17 +401,18 @@ a:hover {
 	/* box-shadow: 0 0 0.5rem #0000001a; */
 	background: var(--card-bg-color);
 	padding: 2rem;
-	border-radius: .5rem;
+	border-radius: 0.5rem;
 	border-top: 0.2rem solid var(--accent-color);
 }
 
-.card > h1:first-child,
-.card > h2:first-child,
-.card > h3:first-child,
-.card > h4:first-child {
+.card>h1:first-child,
+.card>h2:first-child,
+.card>h3:first-child,
+.card>h4:first-child {
 	margin-top: 0;
 }
-.card > *:last-child {
+
+.card>*:last-child {
 	margin-bottom: 0;
 }
 
@@ -359,13 +436,14 @@ a:hover {
 	border-radius: 0.5rem;
 }
 
-.well > h1:first-child,
-.well > h2:first-child,
-.well > h3:first-child,
-.well > h4:first-child {
+.well>h1:first-child,
+.well>h2:first-child,
+.well>h3:first-child,
+.well>h4:first-child {
 	margin-top: 0;
 }
-.well > *:last-child {
+
+.well>*:last-child {
 	margin-bottom: 0;
 }
 
@@ -390,6 +468,7 @@ a:hover {
 	.container {
 		margin: 1rem;
 	}
+
 	.card {
 		padding: 1rem;
 	}

@@ -20,13 +20,11 @@
 		margin-bottom: 1rem;
 	}
 	.article-preview header h2 {
-		font-family: var(--font-sans);
 		font-size: 1.8rem;
 		margin-bottom: 1rem;
 	}
 	.article-preview header h2 a {
 		text-decoration: none;
-		color: var(--heading-color);
 	}
 	.article-preview {
 		margin-bottom: 2rem;
