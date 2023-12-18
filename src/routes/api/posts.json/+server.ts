@@ -13,6 +13,6 @@ export const GET = async () => {
 
 		return json(filteredPosts);
 	} catch {
-		throw error(500, 'There was an error fetching posts');
+		error(500, 'There was an error fetching posts');
 	}
 };

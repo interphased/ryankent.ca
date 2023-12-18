@@ -5,13 +5,13 @@ export const GET = async ({ url }) => {
 	const slug = url.pathname.split('/').pop();
 
 	if (!slug) {
-		throw error(404, 'The request is missing a parameter');
+		error(404, 'The request is missing a parameter');
 	}
 
 	try {
 		const post = await fetchMarkdownPost(slug);
 		return json(post);
 	} catch {
-		throw error(500, 'There was an error fetching the post');
+		error(500, 'There was an error fetching the post');
 	}
 };
