@@ -458,6 +458,27 @@ a:hover {
 	opacity: 0 !important;
 }
 
+.responsive-video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+	margin: 2rem 0;
+}
+
+.responsive-video-container::after {
+  display: block;
+  content: "";
+  padding-top: 56.25%;
+}
+
+.responsive-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (min-width: 90rem) {
 	html {
 		font-size: 18px;

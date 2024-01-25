@@ -43,6 +43,35 @@
 		margin-right: 2rem;
 	}
 
+	.article-body :global(ul),
+	.article-body :global(ol) {
+		margin-left: 2rem;
+		margin-right: 2rem;
+		padding-left: 1rem;
+		list-style: outside;
+	}
+
+	.article-body :global(img) {
+		max-width: 100%;
+		text-align: center;
+		margin-inline: auto;
+	}
+
+	.article-body :global(figure) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.article-body :global(figcaption) {
+		font-style: italic;
+		text-align: center;
+	}
+
 	.article-body :global(pre[class*='language-']) {
 		margin: 2rem 0 2rem 0;
 		padding: 2rem;
