@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { theme } from '$lib/stores/theme';
 
-	let ready = false;
+	let ready = $state(false);
 
 	const githubTheme = $theme === 'dark' ? 'github-dark' : 'github-light';
 

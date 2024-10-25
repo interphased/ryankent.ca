@@ -2,7 +2,11 @@
 	import type { Post } from '$lib/utils/posts';
 	import ArticleMeta from './ArticleMeta.svelte';
 
-	export let post: Post;
+	interface Props {
+		post: Post;
+	}
+
+	let { post }: Props = $props();
 </script>
 
 <article class="article-preview card">

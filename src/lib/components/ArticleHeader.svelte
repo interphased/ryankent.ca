@@ -1,13 +1,18 @@
 <script lang="ts">
 	import ArticleMeta from './ArticleMeta.svelte';
 
-	export let date: string;
-	export let readTime: number;
+	interface Props {
+		date: string;
+		readTime: number;
+		children?: import('svelte').Snippet;
+	}
+
+	let { date, readTime, children }: Props = $props();
 </script>
 
 <header class="article-header">
 	<h1>
-		<slot />
+		{@render children?.()}
 	</h1>
 	<ArticleMeta {date} {readTime} />
 </header>

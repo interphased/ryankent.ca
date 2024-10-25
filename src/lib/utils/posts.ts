@@ -1,4 +1,5 @@
 import type { SvelteComponent } from 'svelte';
+import { render } from 'svelte/server';
 import { calculate } from './readTime';
 
 export type Post = {
@@ -20,9 +21,9 @@ export const fetchMarkdownPosts = async () => {
 	const allPosts: Post[] = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
 			const post = (await resolver()) as SvelteComponent<Post['metadata']>;
-			const content = post.default.render();
 			const postPath = `/blog/${path.split('/').pop()?.slice(0, -3)}`;
-			const readTime = calculate(content.html);
+			const { body } = render(post.default);
+			const readTime = calculate(body);
 
 			return {
 				metadata: post.metadata,
@@ -40,8 +41,8 @@ export const fetchMarkdownPost = async (slug: string) => {
 	const postFile: SvelteComponent<Post['metadata']> = await import(
 		`../content/posts/${trimmedSlug}.md`
 	);
-	const content = postFile.default.render();
-	const readTime = calculate(content.html);
+	const { body } = render(postFile.default);
+	const readTime = calculate(body);
 
 	const post: Post = {
 		path: `/blog/${trimmedSlug}`,

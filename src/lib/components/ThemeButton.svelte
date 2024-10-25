@@ -1,15 +1,15 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { toggleTheme, theme } from '$lib/stores/theme';
 	import { fade } from 'svelte/transition';
 
-	let ready = false;
+	let ready = $state(false);
 	onMount(() => (ready = true));
 </script>
 
 {#if ready}
 	<button
-		on:click={toggleTheme}
+		onclick={toggleTheme}
 		in:fade={{ delay: 0, duration: 300 }}
 		aria-label="Toggle dark mode">
 		{#if $theme === 'dark'}

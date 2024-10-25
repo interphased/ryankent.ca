@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let articleCount: number;
+	interface Props {
+		articleCount: number;
+	}
+
+	let { articleCount }: Props = $props();
 </script>
 
 <header class="blog-header">

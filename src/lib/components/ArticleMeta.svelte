@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Time from './Time.svelte';
 
-	export let date: string;
-	export let readTime: number;
+	interface Props {
+		date: string;
+		readTime: number;
+	}
+
+	let { date, readTime }: Props = $props();
 </script>
 
 <div class="article-meta">

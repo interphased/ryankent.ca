@@ -2,7 +2,7 @@
 	import BlogHeader from '$lib/components/BlogHeader.svelte';
 	import ArticlePreview from '$lib/components/ArticlePreview.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

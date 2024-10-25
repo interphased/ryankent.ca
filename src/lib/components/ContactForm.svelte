@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { preventDefault } from 'svelte/legacy';
+
 	import Alert from './Alert.svelte';
 
-	let success = false;
-	let error = false;
-	let email = '';
-	let message = '';
+	let success = $state(false);
+	let error = $state(false);
+	let email = $state('');
+	let message = $state('');
 
 	function handleSubmit(e: SubmitEvent) {
 		success = false;
@@ -27,7 +29,7 @@
 </script>
 
 <form
-	on:submit|preventDefault={handleSubmit}
+	onsubmit={preventDefault(handleSubmit)}
 	name="contact"
 	method="POST"
 	netlify-honeypot="bot-field"
@@ -47,7 +49,7 @@
 		rows="4"
 		required
 		placeholder="Hi! I'm contacting you because..."
-		bind:value={message} />
+		bind:value={message}></textarea>
 	{#if success}
 		<Alert type="success">Thanks for submitting your message. I'll get back to you soon.</Alert>
 	{/if}

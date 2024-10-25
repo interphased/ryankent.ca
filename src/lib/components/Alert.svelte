@@ -1,9 +1,14 @@
 <script lang="ts">
-	export let type: 'success' | 'error';
+	interface Props {
+		type: 'success' | 'error';
+		children?: import('svelte').Snippet;
+	}
+
+	let { type, children }: Props = $props();
 </script>
 
 <span class="alert" class:error={type === 'error'} class:success={type === 'success'}>
-	<slot />
+	{@render children?.()}
 </span>
 
 <style>

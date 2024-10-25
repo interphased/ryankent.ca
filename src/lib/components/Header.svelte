@@ -1,3 +1,10 @@
+<script lang="ts">
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+	let { children }: Props = $props();
+</script>
+
 <header class="container">
 	<div class="branding">
 		<a href="/">
@@ -9,7 +16,7 @@
 			</span>
 		</h1>
 	</div>
-	<slot />
+	{@render children?.()}
 </header>
 
 <style>

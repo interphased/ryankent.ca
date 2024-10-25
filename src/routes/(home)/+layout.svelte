@@ -1,10 +1,15 @@
-<script>
+<script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
+
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+	let { children }: Props = $props();
 </script>
 
 <div class="home">
 	<main class="container container-sm">
-		<slot />
+		{@render children?.()}
 	</main>
 </div>
 

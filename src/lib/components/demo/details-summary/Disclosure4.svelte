@@ -1,9 +1,9 @@
-<script>
-	let open = false;
+<script lang="ts">
+	let open = $state(false);
 </script>
 
 <button
-	on:click={() => {
+	onclick={() => {
 		open = !open;
 	}}>
 	Toggle the disclosure open/closed

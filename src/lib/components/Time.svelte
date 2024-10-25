@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let date: string;
+	interface Props {
+		date: string;
+	}
+
+	let { date }: Props = $props();
 </script>
 
 <time datetime={date}>

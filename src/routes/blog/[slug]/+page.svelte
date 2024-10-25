@@ -4,7 +4,7 @@
 	import Comments from '$lib/components/Comments.svelte';
 	import BlogNav from '$lib/components/BlogNav.svelte';
 
-	export let data;
+	let { data } = $props();
 	const { post, component } = data;
 </script>
 
@@ -22,7 +22,8 @@
 		{post.metadata.title}
 	</ArticleHeader>
 	<ArticleBody>
-		<svelte:component this={component} />
+		{@const SvelteComponent = component}
+		<SvelteComponent />
 	</ArticleBody>
 	<BlogNav />
 </article>
