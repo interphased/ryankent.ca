@@ -11,19 +11,20 @@
 
 <style>
 	.article-body {
-		padding: 2rem 0 4rem 0;
+		padding: 2rem 2rem 4rem 2rem;
 	}
 	:global(.article-body > p:first-child::first-letter) {
-		font-size: 5rem;
+		font-size: 4.8rem;
 		line-height: 3rem;
 		float: left;
 		margin-top: 0;
 		margin-right: 0.2rem;
 		font-family: var(--font-serif);
+		color: var(--heading-color);
 	}
 	.article-body :global(h2) {
 		position: relative;
-		margin: 6rem 0 2rem 0;
+		margin: 5rem 0 2rem 0;
 	}
 
 	/* .article-body :global(h2::before) {
@@ -45,10 +46,10 @@
 		margin-bottom: 1rem;
 	}
 
-	.article-body :global(p) {
+	/*.article-body :global(p) {
 		margin-left: 2rem;
 		margin-right: 2rem;
-	}
+	}*/
 
 	.article-body :global(ul),
 	.article-body :global(ol) {
@@ -80,8 +81,8 @@
 	}
 
 	.article-body :global(pre[class*='language-']) {
-		margin: 2rem 0 2rem 0;
-		padding: 2rem;
+		margin: 2rem -2rem;
+		padding: 2rem 2rem;
 	}
 
 	.article-body :global(pre[class*='language-'] > code[class*='language-']) {
@@ -90,9 +91,9 @@
 	}
 
 	.article-body :global(blockquote) {
-		margin: 2rem 0;
+		margin: 2rem -2rem;
 		background: var(--blockquote-bg-color);
-		padding: 2rem 3rem;
+		padding: 2rem 2rem;
 		border-radius: 0.5rem;
 		color: var(--heading-color);
 	}
@@ -111,16 +112,24 @@
 	}
 
 	@media screen and (max-width: 40rem) {
+		.article-body {
+			padding-left: 0;
+			padding-right: 0;
+		}
 		.article-body :global(p),
 		.article-body :global(h2) {
 			margin-left: 0;
 			margin-right: 0;
 		}
 		.article-body :global(blockquote) {
-			padding: 1rem;
+			padding: 1rem 1.5rem;
+			margin-left: 0;
+			margin-right: 0;
 		}
 		.article-body :global(pre[class*='language-']) {
-			padding: 1rem;
+			padding: 1rem 1.5rem;
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 </style>

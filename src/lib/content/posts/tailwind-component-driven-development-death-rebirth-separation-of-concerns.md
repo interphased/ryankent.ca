@@ -99,7 +99,7 @@ To work on something like this effectively, it would make a lot of sense to work
 
 We don't need to context shift when developing features anymore, we can just write them all in one place.
 
-> ## The traditional separation of concerns for the web doesn't make a lot of sense anymore. It's cumbersome and fragile. Concerns shouldn't be grouped by filetype, but by feature.
+> ### The traditional separation of concerns for the web doesn't make a lot of sense anymore. It's cumbersome and fragile. Concerns shouldn't be grouped by filetype, but by feature.
 
 Components, with Tailwind, can have their content, presentation, and behaviours, all unified under one "concern." Custom functionality can be added, and presentation can be modified globally in the theme config, or locally in the component.
 

@@ -158,6 +158,11 @@ input[type='reset'] {
 }
 
 html {
+	--font-size-sm: 0.75rem;
+	--font-size-base: 1rem;
+	--font-size-lg: 1.5rem;
+	--font-size-xl: 2.25rem;
+	--font-size-2xl: 3.375rem;
 	--accent-color: #89b906;
 	--bg-color: #eceee9;
 	--bg-gradient: linear-gradient(0deg, #dee3db, #fcfff8);
@@ -240,7 +245,7 @@ body {
 h1 {
 	color: var(--heading-color);
 	font-family: var(--font-serif);
-	font-size: 2.4rem;
+	font-size: var(--font-size-2xl);
 	margin-bottom: 2rem;
 	font-weight: 700;
 	line-height: var(--heading-line-height);
@@ -254,7 +259,7 @@ h1>span {
 
 h2 {
 	color: var(--heading-color);
-	font-size: 2rem;
+	font-size: var(--font-size-xl);
 	font-family: var(--font-serif);
 	margin: 0 0 2rem 0;
 	font-weight: 500;
@@ -263,7 +268,7 @@ h2 {
 
 h3 {
 	color: var(--heading-color);
-	font-size: 1.5rem;
+	font-size: var(--font-size-lg);
 	font-family: var(--font-serif);
 	margin: 0 0 2rem 0;
 	font-weight: 300;
@@ -272,7 +277,7 @@ h3 {
 
 h4 {
 	color: var(--heading-color);
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
 	margin: 2rem 0 1rem 0;
@@ -282,7 +287,7 @@ h4 {
 
 p {
 	color: var(--text-color);
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	line-height: var(--line-height);
 	margin-bottom: 1rem;
 	font-weight: 400;
@@ -296,7 +301,7 @@ ul {
 
 ul li {
 	color: var(--text-color);
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	line-height: var(--line-height);
 	font-weight: 400;
 }
@@ -306,7 +311,7 @@ strong {
 }
 
 small {
-	font-size: 0.8rem;
+	font-size: var(--font-size-sm);
 }
 
 em {
@@ -321,6 +326,10 @@ code {
 	border-radius: 0.2rem;
 }
 
+pre code {
+	padding: 0;
+}
+
 textarea,
 input {
 	display: block;
@@ -332,7 +341,7 @@ input {
 	padding: 0.8rem;
 	border-radius: 0.5rem;
 	margin-bottom: 0.5rem;
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	font-family: var(--font-sans);
 }
 
@@ -351,7 +360,7 @@ button,
 	background-color: var(--button-bg-color);
 	color: var(--button-text-color);
 	font-weight: 600;
-	font-size: 1rem;
+	font-size: var(--font-size-base);
 	border-radius: 0.5rem;
 	padding: 0.3rem 2rem;
 }
@@ -459,24 +468,24 @@ a:hover {
 }
 
 .responsive-video-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
 	margin: 2rem 0;
 }
 
 .responsive-video-container::after {
-  display: block;
-  content: "";
-  padding-top: 56.25%;
+	display: block;
+	content: "";
+	padding-top: 56.25%;
 }
 
 .responsive-video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (min-width: 90rem) {
