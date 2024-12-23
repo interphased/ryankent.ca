@@ -1,6 +1,7 @@
 ---
 title: Designing and Developing Frictionless User Interfaces
 date: 2024-01-24T22:38:38.208Z
+lastmod: 2024-01-24T22:38:38.208Z
 description: Designing a simple user interface can oftentimes be more difficult than expected. They are deceptive. A frictionless interface is no stroke of luck; a lot of work and experience go into making something you can use without thinking about it.
 keywords:
   - Design

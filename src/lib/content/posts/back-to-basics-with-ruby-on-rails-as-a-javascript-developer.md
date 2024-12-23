@@ -1,6 +1,7 @@
 ---
 title: Back to basics with Ruby on Rails as a JavaScript developer
-date: 2024-12-15
+date: 2024-12-15T22:38:38.208Z
+lastmod: 2024-12-15T22:38:38.208Z
 description: Are you tired of React? Has it become too cumbersome and complicated to work with? Do you find yourself often rewriting code that was a best practice a few months ago but is now no longer recommended? Do you have framework fatigue? Learn the differences developing web applications between React and Rails. Change your mental model and go back to the basics.
 keywords:
   - Programming

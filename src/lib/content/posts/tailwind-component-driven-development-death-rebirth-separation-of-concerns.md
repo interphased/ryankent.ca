@@ -1,6 +1,7 @@
 ---
 title: 'Tailwind, component-driven development, and the death and rebirth of the separation of concerns'
 date: 2023-12-17T12:00:00.000Z
+lastmod: 2023-12-17T12:00:00.000Z
 description: 'The separation of concerns is a longstanding, tried-and-true design principle in software development. When it comes to the web, the classic separation of concerns is HTML, CSS, and JS. But this has become a tiring, cumbersome, and fragile system to work with. I argue that the traditional separation of concerns on the web has died and been reborn with a new vision for what a "concern" even is.'
 keywords:
   - HTML

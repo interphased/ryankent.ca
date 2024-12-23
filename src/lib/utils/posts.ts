@@ -8,6 +8,7 @@ export type Post = {
 	metadata: {
 		title: string;
 		date: string;
+		lastmod: string;
 		description: string;
 		keywords: string[];
 		published: boolean;
