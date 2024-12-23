@@ -1,8 +1,13 @@
+export const prerender = true;
+
 import { fetchMarkdownPosts, type Post } from '$lib/utils/posts';
 
 const site = 'https://ryankent.ca';
 const pages: string[] = ['blog'];
 const posts: Post[] = await fetchMarkdownPosts();
+const mostRecentPostDate = posts
+	.filter((p) => p.metadata.published)
+	.sort((a, b) => b.metadata.date.localeCompare(a.metadata.date))[0].metadata.date;
 
 export async function GET({ url }) {
 	const body = sitemap(pages);
@@ -22,32 +27,33 @@ const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 	xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 >
 	<url>
-	<loc>${site}</loc>
-	<changefreq>weekly</changefreq>
-	<priority>1.0</priority>
+		<loc>${site}</loc>
+		<changefreq>weekly</changefreq>
+		<lastmod>${mostRecentPostDate}</lastmod>
+		<priority>1.0</priority>
 	</url>
 	${pages
 		.map(
 			(page) => `
-				<url>
-				<loc>${site}/${page}</loc>
-				<changefreq>daily</changefreq>
-				<priority>0.8</priority>
-				</url>
-				`
+	<url>
+		<loc>${site}/${page}</loc>
+		<changefreq>weekly</changefreq>
+		<lastmod>${mostRecentPostDate}</lastmod>
+		<priority>0.8</priority>
+	</url>`
 		)
 		.join('')}
 	${posts
 		.filter((p) => p.metadata.published)
 		.map(
 			(post) => `
-				<url>
-				<loc>${site}${post.path}</loc>
-				<changefreq>daily</changefreq>
-				<lastmod>${post.metadata.lastmod}</lastmod>
-				<priority>0.5</priority>
-				</url>
-				`
+	<url>
+		<loc>${site}${post.path}</loc>
+		<changefreq>weekly</changefreq>
+		<lastmod>${post.metadata.lastmod}</lastmod>
+		<priority>0.5</priority>
+	</url>
+	`
 		)
 		.join('')}
 </urlset>`;
